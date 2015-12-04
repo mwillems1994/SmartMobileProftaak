@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F55880091BD792560051791D /* FacebookAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55880081BD792560051791D /* FacebookAccount.swift */; };
+		F55880091BD792560051791D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55880081BD792560051791D /* Account.swift */; };
 		F5C66EFA1BC6777D00720CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C66EF91BC6777D00720CB3 /* AppDelegate.swift */; };
 		F5C66EFC1BC6777D00720CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C66EFB1BC6777D00720CB3 /* ViewController.swift */; };
 		F5C66EFF1BC6777D00720CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C66EFD1BC6777D00720CB3 /* Main.storyboard */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F55880081BD792560051791D /* FacebookAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAccount.swift; sourceTree = "<group>"; };
+		F55880081BD792560051791D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F5C66EF41BC6777D00720CB3 /* fbLoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbLoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C66EF81BC6777D00720CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C66EF91BC6777D00720CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F5C66EF91BC6777D00720CB3 /* AppDelegate.swift */,
-				F55880081BD792560051791D /* FacebookAccount.swift */,
+				F55880081BD792560051791D /* Account.swift */,
 				F5ED0AF31C1077CF00177494 /* FacebookViewController.swift */,
 				F5C66F001BC6777D00720CB3 /* Images.xcassets */,
 				F5C66F021BC6777D00720CB3 /* LaunchScreen.xib */,
@@ -204,6 +204,7 @@
 				TargetAttributes = {
 					F5C66EF31BC6777D00720CB3 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = RA8W89HU4Z;
 					};
 					F5C66F081BC6777D00720CB3 = {
 						CreatedOnToolsVersion = 6.4;
@@ -259,7 +260,7 @@
 				F5ED0AF61C1077CF00177494 /* SettingsViewController.swift in Sources */,
 				F5ED0AF51C1077CF00177494 /* FacebookViewController.swift in Sources */,
 				F5C66EFA1BC6777D00720CB3 /* AppDelegate.swift in Sources */,
-				F55880091BD792560051791D /* FacebookAccount.swift in Sources */,
+				F55880091BD792560051791D /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +388,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/fhict/Documents/FacebookSDK,
@@ -396,8 +399,9 @@
 				);
 				INFOPLIST_FILE = fbLoginTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Dijk.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.fbLoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -405,6 +409,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/fhict/Documents/FacebookSDK,
@@ -414,8 +420,9 @@
 				);
 				INFOPLIST_FILE = fbLoginTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Dijk.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.fbLoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

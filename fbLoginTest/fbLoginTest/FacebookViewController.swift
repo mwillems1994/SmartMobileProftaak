@@ -10,8 +10,8 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-struct myFacebook {
-    static var me:FacebookAccount!
+struct myAccount {
+    static var me:Account!
 }
 class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -24,7 +24,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         else
         {
             print("Al ingelogd");
-            myFacebook.me = FacebookAccount(id: FBSDKAccessToken.currentAccessToken().userID)
+            myAccount.me = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
             self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
         
