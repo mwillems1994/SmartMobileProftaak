@@ -18,12 +18,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad()
     {
-        if(FBSDKAccessToken.currentAccessToken() == nil)
-        {
-            print("Niet ingelogd");
-        }
-        else
-        {
+        if(FBSDKAccessToken.currentAccessToken() != nil) {
             print("Al ingelogd");
             myAccount.me = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
             self.performSegueWithIdentifier("loginSuccess", sender:self)
