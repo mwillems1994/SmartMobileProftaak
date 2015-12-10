@@ -24,6 +24,10 @@
 		0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */; };
 		0A6DCA731C19691200152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
 		0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
+		0A6DCA761C196C9C00152BA8 /* logo_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA751C196C9C00152BA8 /* logo_w.png */; };
+		0A6DCA781C19704800152BA8 /* profile_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA771C19704800152BA8 /* profile_pic.png */; };
+		0A6DCA7A1C197ADF00152BA8 /* main_photo_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA791C197ADF00152BA8 /* main_photo_profile.png */; };
+		0A6DCA7C1C1995CE00152BA8 /* Coke.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA7B1C1995CE00152BA8 /* Coke.png */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47029FC1A7F27DB00E30A3C /* Images.xcassets */; };
 		F4702A0C1A7F27DC00E30A3C /* SidebarMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4702A0B1A7F27DC00E30A3C /* SidebarMenuTests.swift */; };
@@ -63,6 +67,10 @@
 		0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = images/Splashscreen.png; sourceTree = SOURCE_ROOT; };
 		0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0A6DCA711C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gui_App_Extrema_Heroes.xcdatamodel; sourceTree = "<group>"; };
+		0A6DCA751C196C9C00152BA8 /* logo_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_w.png; path = images/logo_w.png; sourceTree = SOURCE_ROOT; };
+		0A6DCA771C19704800152BA8 /* profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_pic.png; path = images/profile_pic.png; sourceTree = SOURCE_ROOT; };
+		0A6DCA791C197ADF00152BA8 /* main_photo_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_photo_profile.png; path = images/main_photo_profile.png; sourceTree = SOURCE_ROOT; };
+		0A6DCA7B1C1995CE00152BA8 /* Coke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coke.png; path = images/Coke.png; sourceTree = SOURCE_ROOT; };
 		F47029F01A7F27DB00E30A3C /* Extrema Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extrema Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				0A10D8551C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld */,
+				0A6DCA7B1C1995CE00152BA8 /* Coke.png */,
+				0A6DCA751C196C9C00152BA8 /* logo_w.png */,
 				0A10D83E1C16FA1F008A0FB7 /* first_1.png */,
+				0A6DCA791C197ADF00152BA8 /* main_photo_profile.png */,
+				0A6DCA771C19704800152BA8 /* profile_pic.png */,
 				0A10D83F1C16FA1F008A0FB7 /* ios-icons */,
 				0A10D8401C16FA1F008A0FB7 /* login.png */,
 				0A10D8411C16FA1F008A0FB7 /* logo_03.png */,
@@ -282,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6DCA7A1C197ADF00152BA8 /* main_photo_profile.png in Resources */,
 				0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */,
 				0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
 				0A10D84A1C16FA1F008A0FB7 /* login.png in Resources */,
@@ -289,12 +302,15 @@
 				0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */,
 				0A10D84E1C16FA1F008A0FB7 /* promote_2.png in Resources */,
 				0A10D84D1C16FA1F008A0FB7 /* promote_1.png in Resources */,
+				0A6DCA761C196C9C00152BA8 /* logo_w.png in Resources */,
+				0A6DCA7C1C1995CE00152BA8 /* Coke.png in Resources */,
 				0A10D84F1C16FA1F008A0FB7 /* promote_3.png in Resources */,
 				0A10D8481C16FA1F008A0FB7 /* first_1.png in Resources */,
 				0A10D84C1C16FA1F008A0FB7 /* main_BG.png in Resources */,
 				0A10D8511C16FA1F008A0FB7 /* Splashscreen.png in Resources */,
 				0A10D84B1C16FA1F008A0FB7 /* logo_03.png in Resources */,
 				0A10D8491C16FA1F008A0FB7 /* ios-icons in Resources */,
+				0A6DCA781C19704800152BA8 /* profile_pic.png in Resources */,
 				F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,11 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var event = Event(ID: 1, Name: "Outdoor", Active: "1")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var event = Event(ID: 1, Name: "Outdoor", Active: "1")
+        
         print(event.Rewards.count)
     }
 
