@@ -21,9 +21,9 @@
 		0A10D84F1C16FA1F008A0FB7 /* promote_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8451C16FA1F008A0FB7 /* promote_3.png */; };
 		0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8461C16FA1F008A0FB7 /* Register.png */; };
 		0A10D8511C16FA1F008A0FB7 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */; };
-		0A10D8561C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A10D8551C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
-		0A10D8571C16FBF4008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8551C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
 		0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */; };
+		0A6DCA731C19691200152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
+		0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47029FC1A7F27DB00E30A3C /* Images.xcassets */; };
 		F4702A0C1A7F27DC00E30A3C /* SidebarMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4702A0B1A7F27DC00E30A3C /* SidebarMenuTests.swift */; };
@@ -62,6 +62,7 @@
 		0A10D8461C16FA1F008A0FB7 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Register.png; path = images/Register.png; sourceTree = SOURCE_ROOT; };
 		0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = images/Splashscreen.png; sourceTree = SOURCE_ROOT; };
 		0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0A6DCA711C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gui_App_Extrema_Heroes.xcdatamodel; sourceTree = "<group>"; };
 		F47029F01A7F27DB00E30A3C /* Extrema Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extrema Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F47029F41A7F27DB00E30A3C /* Info.plist */,
+				0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -281,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */,
-				0A10D8571C16FBF4008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
+				0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
 				0A10D84A1C16FA1F008A0FB7 /* login.png in Resources */,
 				F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */,
 				0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */,
@@ -311,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A10D8561C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */,
+				0A6DCA731C19691200152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */,
 				0A10D83D1C16FA04008A0FB7 /* AppDelegate.swift in Sources */,
 				0A10D83A1C16F9F1008A0FB7 /* tutorialViewController.swift in Sources */,
 				F4D750181BD38F0C009E1003 /* SWRevealViewController.m in Sources */,
@@ -537,6 +539,17 @@
 			);
 			name = Gui_App_Extrema_Heroes.xcdatamodeld;
 			path = "../../../../../../SmartMobileProftaak/SidebarMenu 3/Gui_App_Extrema_Heroes.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A6DCA711C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodel */,
+			);
+			currentVersion = 0A6DCA711C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodel */;
+			name = Gui_App_Extrema_Heroes.xcdatamodeld;
+			path = ../Gui_App_Extrema_Heroes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
