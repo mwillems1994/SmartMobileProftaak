@@ -36,15 +36,9 @@ class ViewController: UIViewController, BarcodeDelegate {
     }
     
     func barcodeReaded(barcode: String) {
-        print(barcode)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the destination view controller
-        let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
-        
-        barcodeViewController.delegate = self;
-    }
+        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)    }
     
 }
 
