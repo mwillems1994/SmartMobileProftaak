@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F521FDCA1C197ABE004DF88E /* FacebookPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521FDC91C197ABE004DF88E /* FacebookPush.swift */; };
+		F521FDCC1C197DD8004DF88E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521FDCB1C197DD8004DF88E /* FBSDKShareKit.framework */; };
 		F55880091BD792560051791D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55880081BD792560051791D /* Account.swift */; };
 		F5C66EFA1BC6777D00720CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C66EF91BC6777D00720CB3 /* AppDelegate.swift */; };
 		F5C66EFC1BC6777D00720CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C66EFB1BC6777D00720CB3 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F521FDC91C197ABE004DF88E /* FacebookPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPush.swift; sourceTree = "<group>"; };
+		F521FDCB1C197DD8004DF88E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151111/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		F55880081BD792560051791D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F5C66EF41BC6777D00720CB3 /* fbLoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbLoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C66EF81BC6777D00720CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 				F5ED0AED1C10774300177494 /* Bolts.framework in Frameworks */,
 				F5ED0AEF1C10774300177494 /* FBSDKCoreKit.framework in Frameworks */,
 				F5ED0AF21C10774300177494 /* FBSDKShareKit.framework in Frameworks */,
+				F521FDCC1C197DD8004DF88E /* FBSDKShareKit.framework in Frameworks */,
 				F5ED0AF11C10774300177494 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				F5ED0AF01C10774300177494 /* FBSDKLoginKit.framework in Frameworks */,
 				F5ED0AEE1C10774300177494 /* FBAudienceNetwork.framework in Frameworks */,
@@ -111,6 +116,7 @@
 				F5ED0AF41C1077CF00177494 /* SettingsViewController.swift */,
 				F5C66EF71BC6777D00720CB3 /* Supporting Files */,
 				F5C66EFB1BC6777D00720CB3 /* ViewController.swift */,
+				F521FDC91C197ABE004DF88E /* FacebookPush.swift */,
 			);
 			path = fbLoginTest;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 		F5C66F191BC6794700720CB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F521FDCB1C197DD8004DF88E /* FBSDKShareKit.framework */,
 				F5ED0AE71C10774300177494 /* Bolts.framework */,
 				F5ED0AE81C10774300177494 /* FBAudienceNetwork.framework */,
 				F5ED0AE91C10774300177494 /* FBSDKCoreKit.framework */,
@@ -198,7 +205,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Robin;
 				TargetAttributes = {
@@ -261,6 +268,7 @@
 				F5ED0AF51C1077CF00177494 /* FacebookViewController.swift in Sources */,
 				F5C66EFA1BC6777D00720CB3 /* AppDelegate.swift in Sources */,
 				F55880091BD792560051791D /* Account.swift in Sources */,
+				F521FDCA1C197ABE004DF88E /* FacebookPush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -402,6 +411,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Schouten.fbLoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "fbLoginTest/fbLoginTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -409,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -423,6 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Schouten.fbLoginTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "fbLoginTest/fbLoginTest-Bridging-Header.h";
 			};
 			name = Release;
 		};

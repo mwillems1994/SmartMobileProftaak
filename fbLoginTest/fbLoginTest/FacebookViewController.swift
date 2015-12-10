@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKShareKit
 
 struct myAccount {
     static var me:Account!

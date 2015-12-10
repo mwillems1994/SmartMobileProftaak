@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import FBSDKShareKit
 
 class SettingsViewController:UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad()
@@ -23,6 +23,20 @@ class SettingsViewController:UIViewController, FBSDKLoginButtonDelegate {
         loginButton.delegate = self
         
         self.view.addSubview(loginButton)
+        
+        // migael toegevoegd
+        // share button
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        content.contentURL = NSURL(string: "http://google.nl")
+        content.contentTitle = "Extrema Heroes"
+        content.contentDescription = "test deel knop"
+        content.imageURL = NSURL(string: "http://extremanetwork.com/wp-content/uploads/2015/02/extrema_logo.png")
+        
+        let shareButton : FBSDKShareButton = FBSDKShareButton()
+        shareButton.shareContent = content
+        shareButton.frame = CGRectMake((UIScreen.mainScreen().bounds.width - 100) * 0.5, 50, 100, 25)
+        self.view.addSubview(shareButton)
+        // tot hier
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,7 +11,7 @@ import UIKit
 import FBSDKCoreKit
 //#import <Frameworks/FBSDKShareKit.h>
 import FBSDKLoginKit
-
+import FBSDKShareKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -26,6 +26,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("Al ingelogd");
             //go to after login screen:
             self.performSegueWithIdentifier("loginSuccess", sender:self)
+
         }
         
         
@@ -33,8 +34,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.readPermissions = [ "public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
         loginButton.delegate = self
-        
+
         self.view.addSubview(loginButton)
+        
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
