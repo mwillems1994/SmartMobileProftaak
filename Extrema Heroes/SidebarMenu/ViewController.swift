@@ -9,17 +9,13 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, BarcodeDelegate {
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -37,6 +33,17 @@ class ViewController: UIViewController {
         
         return true;
         
+    }
+    
+    func barcodeReaded(barcode: String) {
+        print(barcode)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the destination view controller
+        let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
+        
+        barcodeViewController.delegate = self;
     }
     
 }
