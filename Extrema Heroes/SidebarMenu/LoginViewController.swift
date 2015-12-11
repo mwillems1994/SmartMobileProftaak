@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         requireFacebook()
     }
     
+    
     func requireFacebook(){
         if(FBSDKAccessToken.currentAccessToken() != nil) {
             print("Al ingelogd");

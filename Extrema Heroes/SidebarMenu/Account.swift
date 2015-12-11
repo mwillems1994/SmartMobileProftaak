@@ -13,27 +13,28 @@ import FBSDKLoginKit
 
 class Account
 {
-    private let id:Int
-    private let facebookId:String
-    private var email:String
-    private var name:String
-    private let profilePicture:UIImage
+    private let ID:Int
+    private let FbID:String
+    private var Email:String
+    private var Firstname:String
+    private var Lastname:String
+    private var ImageURL:String
+    private var Password:String
     
     init(facebookId:String)
     {
-        self.facebookId = facebookId
-        self.name = ""
-        self.email = ""
-        self.id = 0
+        self.FbID = facebookId
+        self.Firstname = ""
+        self.Lastname = ""
+        self.Email = ""
+        self.ImageURL = ""
+        self.Password = "Default"
+        self.ID = 0
         
-        let facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(self.id)/picture?width=150&length=150")
+        let facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(facebookId)/picture?width=150&length=150")
         if let data = NSData(contentsOfURL: facebookProfileUrl!)
         {
-            self.profilePicture = UIImage(data: data)!
-        }
-        else
-        {
-            self.profilePicture = UIImage()
+            self.ImageURL = EncodeImage(data)
         }
         
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields":"id,email,name"]);
@@ -42,25 +43,50 @@ class Account
                 if error == nil
                 {
                     let resultDict = result as! NSDictionary
-                    self.name = resultDict["name"] as! String
-                    self.email = resultDict["email"] as! String
+                    self.Firstname = resultDict["name"] as! String
+                    self.Email = resultDict["email"] as! String
+                    
                 }
         }
     }
     
+    init(id:Int, fbId: String, email: String, firstname: String, lastname: String, imageURL: String, password: String){
+        self.ID = id
+        self.FbID = fbId
+        self.Firstname = firstname
+        self.Lastname = lastname
+        self.Email = email
+        self.ImageURL = imageURL
+        self.Password = password
+        
+    }
+    
     func getFacebookId() -> String{
-        return self.facebookId
+        return self.FbID
     }
     func getId() -> Int{
-        return self.id
+        return self.ID
     }
     func getName() -> String{
-        return self.name
+        return self.Firstname + " " + self.Lastname
     }
     func getEmail() ->String{
-        return self.email
+        return self.Email
     }
     func getProfilePicture() -> UIImage{
-        return self.profilePicture
+        return DecodeImage()
+    }
+    func login() -> Bool{
+        return false
+    }
+    private func EncodeImage(img:NSData)-> String{
+        let base64String = img.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        return base64String
+    }
+    private func DecodeImage() -> UIImage{
+        let decodedData = NSData(base64EncodedString: self.ImageURL, options: NSDataBase64DecodingOptions(rawValue: 0))
+        let decodedimage = UIImage(data: decodedData!)
+        print(decodedimage)
+        return decodedimage! as UIImage
     }
 }
