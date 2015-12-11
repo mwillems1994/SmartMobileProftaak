@@ -22,6 +22,7 @@
 		0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8461C16FA1F008A0FB7 /* Register.png */; };
 		0A10D8511C16FA1F008A0FB7 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */; };
 		0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */; };
+		0A389C1C1C1AC58700FACFBD /* RefferalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */; };
 		0A6DCA731C19691200152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
 		0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA701C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld */; };
 		0A6DCA761C196C9C00152BA8 /* logo_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA751C196C9C00152BA8 /* logo_w.png */; };
@@ -76,6 +77,7 @@
 		0A10D8461C16FA1F008A0FB7 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Register.png; path = images/Register.png; sourceTree = SOURCE_ROOT; };
 		0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = images/Splashscreen.png; sourceTree = SOURCE_ROOT; };
 		0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefferalViewController.swift; sourceTree = "<group>"; };
 		0A6DCA711C1968F000152BA8 /* Gui_App_Extrema_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gui_App_Extrema_Heroes.xcdatamodel; sourceTree = "<group>"; };
 		0A6DCA751C196C9C00152BA8 /* logo_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_w.png; path = images/logo_w.png; sourceTree = SOURCE_ROOT; };
 		0A6DCA771C19704800152BA8 /* profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_pic.png; path = images/profile_pic.png; sourceTree = SOURCE_ROOT; };
@@ -190,6 +192,7 @@
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				F4702A171A7F351C00E30A3C /* MenuController.swift */,
 				F491E7491A7F4B300026528E /* NewsTableViewController.swift */,
+				0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */,
 				F491E74B1A7F4C630026528E /* NewsTableViewCell.swift */,
 				F491E7521A7F7DF20026528E /* MapViewController.swift */,
 				F491E7541A7F7E010026528E /* PhotoViewController.swift */,
@@ -387,6 +390,7 @@
 				0A10D83B1C16F9F1008A0FB7 /* ViewController.swift in Sources */,
 				0A10D8391C16F9F1008A0FB7 /* ContentViewController.swift in Sources */,
 				F491E74A1A7F4B300026528E /* NewsTableViewController.swift in Sources */,
+				0A389C1C1C1AC58700FACFBD /* RefferalViewController.swift in Sources */,
 				F491E7551A7F7E010026528E /* PhotoViewController.swift in Sources */,
 				F5E663CB1C19A67100A41751 /* Account.swift in Sources */,
 			);
