@@ -15,6 +15,20 @@ struct myAccount {
     static var me:Account!
 }
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    @IBOutlet weak var tbUsername: UITextField!
+    @IBOutlet weak var tbPassword: UITextField!
+    @IBAction func btnLogin(sender: UIButton) {
+        DatabaseManager.sharedInstance.getCheckCredentials(tbUsername.text!, password: tbPassword.text!) { json in
+            for (index, subJson): (String, JSON) in json {
+                let response:JSON = JSON(subJson.object)
+                if(response == true){
+                    print("Ingelogd")
+                } else {
+                    print("Inloggegevens verkeerd")
+                }
+            }
+        }
+    }
     
     override func viewDidLoad()
     {
