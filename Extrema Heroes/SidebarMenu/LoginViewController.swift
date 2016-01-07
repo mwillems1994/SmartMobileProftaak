@@ -15,18 +15,43 @@ struct myAccount {
     static var me:Account!
 }
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-    @IBOutlet weak var tbUsername: UITextField!
+
+    
     @IBOutlet weak var tbPassword: UITextField!
+    @IBOutlet weak var tbUsername: UITextField!
     @IBAction func btnLogin(sender: UIButton) {
+        var credentialCheck = false;
         DatabaseManager.sharedInstance.getCheckCredentials(tbUsername.text!, password: tbPassword.text!) { json in
             for (index, subJson): (String, JSON) in json {
                 let response:JSON = JSON(subJson.object)
                 if(response == true){
-                    print("Ingelogd")
+                    credentialCheck = true
                 } else {
+                    credentialCheck = false
                     print("Inloggegevens verkeerd")
                 }
             }
+        }
+        sleep(1)
+        if(credentialCheck == true){
+            DatabaseManager.sharedInstance.getAccountFromEmail(tbUsername.text!) { json in
+                var tempAccount : Account
+                for (index, subJson): (String, JSON) in json {
+                    let accountJson:JSON = JSON(subJson.object)
+                    tempAccount = Account(
+                        id: Int(accountJson["ID"].string!)!,
+                        fbId: accountJson["FbID"].string!,
+                        email: accountJson["Email"].string!,
+                        firstname: accountJson["Firstname"].string!,
+                        lastname: accountJson["Lastname"].string!,
+                        imageURL: accountJson["ImageURL"].string!,
+                        password: self.tbPassword.text!
+                    )
+                    myAccount.me = tempAccount
+                }
+            }
+            sleep(1)
+            self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
     }
     
@@ -40,6 +65,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if(FBSDKAccessToken.currentAccessToken() != nil) {
             print("Al ingelogd");
             myAccount.me = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
+            sleep(1)
             self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
         

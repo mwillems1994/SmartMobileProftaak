@@ -55,13 +55,19 @@ class DatabaseManager:NSObject {
         })
     }
     
+    func getAccountFromEmail(email : String, onCompletion: (JSON) -> Void) {
+        let route = self.apiURL + "?getAccountFromEmail=\(email)"
+        makeHTTPGetRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
+    
     func createAccount(fbID: String, email: String, firstname: String, lastname: String, password: String){
         let jsonAccount = "%7B%22FbID%22:%22\(fbID)%22,%22Email%22:%22\(email)%22,%22Firstname%22:%22\(firstname)%22,%22Lastname%22:%22\(lastname)%22,%22Password%22:%22\(password)%22%7D"
         executePost("insertAccount", value: jsonAccount)
     }
     
     private func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-        print(path)
         let url = NSURL(string: path)!
         let request = NSMutableURLRequest(URL:url)
         
