@@ -13,28 +13,16 @@ import FBSDKLoginKit
 
 class Account
 {
-    private let ID:Int
-    private let FbID:String
-    private var Email:String
-    private var Firstname:String
-    private var Lastname:String
-    private var ImageURL:String
-    private var Password:String
-    
     init(facebookId:String)
     {
-        self.FbID = facebookId
-        self.Firstname = ""
-        self.Lastname = ""
-        self.Email = ""
-        self.ImageURL = ""
-        self.Password = "Default"
-        self.ID = 0
+        var id = 0
         
         let facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(facebookId)/picture?width=150&length=150")
         if let data = NSData(contentsOfURL: facebookProfileUrl!)
         {
-            self.ImageURL = EncodeImage(data)
+            let imageURL = EncodeImage(data)
+            NSUserDefaults.standardUserDefaults().setObject(imageURL, forKey: "ExtremaImageURL")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
         
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields":"id,email,name"]);
@@ -43,50 +31,70 @@ class Account
                 if error == nil
                 {
                     let resultDict = result as! NSDictionary
-                    self.Firstname = resultDict["name"] as! String
-                    self.Email = resultDict["email"] as! String
                     
+                    let newstr = resultDict["name"] as! String
+                    let token = newstr.componentsSeparatedByString(" ")
+                    print (token)
+                    let firstname = token[0]
+                    let lastname = token[1]
+                    let email = resultDict["email"] as! String
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(firstname, forKey: "ExtremaFirstname")
+                    NSUserDefaults.standardUserDefaults().setObject(lastname, forKey: "ExtremaLastname")
+                    NSUserDefaults.standardUserDefaults().setObject(email, forKey: "ExtremaEmail")
+                    NSUserDefaults.standardUserDefaults().synchronize()
                 }
         }
+        NSUserDefaults.standardUserDefaults().setObject(facebookId, forKey: "ExtremaFbId")
+        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     init(id:Int, fbId: String, email: String, firstname: String, lastname: String, imageURL: String, password: String){
-        self.ID = id
-        self.FbID = fbId
-        self.Firstname = firstname
-        self.Lastname = lastname
-        self.Email = email
-        self.ImageURL = imageURL
-        self.Password = password
+        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+        NSUserDefaults.standardUserDefaults().setObject(fbId, forKey: "ExtremaFbId")
+        NSUserDefaults.standardUserDefaults().setObject(firstname, forKey: "ExtremaFirstname")
+        NSUserDefaults.standardUserDefaults().setObject(lastname, forKey: "ExtremaLastname")
+        NSUserDefaults.standardUserDefaults().setObject(email, forKey: "ExtremaEmail")
+        NSUserDefaults.standardUserDefaults().setObject(imageURL, forKey: "ExtremaImageURL")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    init(){
         
     }
     
     func getFacebookId() -> String{
-        return self.FbID
+        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFbId") as! String
     }
     func getId() -> Int{
-        return self.ID
+        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") as! Int
     }
     func getName() -> String{
-        return self.Firstname + " " + self.Lastname
+         let fn = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") as! String
+         let ln = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaLastname") as! String
+        return fn + " " + ln
     }
     func getEmail() ->String{
-        return self.Email
+        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaEmail") as! String
     }
     func getProfilePicture() -> UIImage{
         return DecodeImage()
     }
-    func login() -> Bool{
-        return false
+    func setProfilePicture(data:NSData){
+        let imageURL = EncodeImage(data)
+        NSUserDefaults.standardUserDefaults().setObject(imageURL, forKey: "ExtremaImageURL")
+        NSUserDefaults.standardUserDefaults().synchronize()
+
     }
     private func EncodeImage(img:NSData)-> String{
         let base64String = img.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         return base64String
     }
     private func DecodeImage() -> UIImage{
-        let decodedData = NSData(base64EncodedString: self.ImageURL, options: NSDataBase64DecodingOptions(rawValue: 0))
+        let imageURL = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaImageURL") as! String
+        let decodedData = NSData(base64EncodedString: imageURL, options: NSDataBase64DecodingOptions(rawValue: 0))
         let decodedimage = UIImage(data: decodedData!)
-        print(decodedimage)
         return decodedimage! as UIImage
     }
 }
