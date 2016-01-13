@@ -34,6 +34,7 @@
 		6DD81ADC1C3FC75C0032D3E0 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81ADB1C3FC75C0032D3E0 /* Reward.swift */; };
 		6DD81ADE1C3FC9590032D3E0 /* RewardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81ADD1C3FC9590032D3E0 /* RewardTableViewController.swift */; };
 		6DD81AE21C3FDB690032D3E0 /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81AE11C3FDB690032D3E0 /* RewardCell.swift */; };
+		6DD81AE41C4684AF0032D3E0 /* CodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81AE31C4684AF0032D3E0 /* CodeController.swift */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47029FC1A7F27DB00E30A3C /* Images.xcassets */; };
 		F4702A0C1A7F27DC00E30A3C /* SidebarMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4702A0B1A7F27DC00E30A3C /* SidebarMenuTests.swift */; };
@@ -94,6 +95,7 @@
 		6DD81ADB1C3FC75C0032D3E0 /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		6DD81ADD1C3FC9590032D3E0 /* RewardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardTableViewController.swift; sourceTree = "<group>"; };
 		6DD81AE11C3FDB690032D3E0 /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
+		6DD81AE31C4684AF0032D3E0 /* CodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeController.swift; sourceTree = "<group>"; };
 		F47029F01A7F27DB00E30A3C /* Extrema Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extrema Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				F47029F91A7F27DB00E30A3C /* Main.storyboard */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				F4702A171A7F351C00E30A3C /* MenuController.swift */,
+				6DD81AE31C4684AF0032D3E0 /* CodeController.swift */,
 				F491E7491A7F4B300026528E /* NewsTableViewController.swift */,
 				6DB79F271C1DE092002D163B /* RegisterViewController.swift */,
 				0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */,
@@ -402,6 +405,7 @@
 				0A10D83A1C16F9F1008A0FB7 /* tutorialViewController.swift in Sources */,
 				F4D750181BD38F0C009E1003 /* SWRevealViewController.m in Sources */,
 				F4702A181A7F351C00E30A3C /* MenuController.swift in Sources */,
+				6DD81AE41C4684AF0032D3E0 /* CodeController.swift in Sources */,
 				6DD81ADE1C3FC9590032D3E0 /* RewardTableViewController.swift in Sources */,
 				6D4658F71C199A4900AD283F /* BarcodeViewController.swift in Sources */,
 				F5E663BB1C19A42100A41751 /* LoginViewController.swift in Sources */,

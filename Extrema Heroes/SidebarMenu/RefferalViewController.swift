@@ -9,6 +9,7 @@
 import UIKit
 
 class RefferalViewController: UIViewController {
+    @IBOutlet weak var imgQRCode: UIImageView!
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -19,11 +20,31 @@ class RefferalViewController: UIViewController {
             menuButton.target = revealViewController()
             menuButton.action = "revealToggle:"
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        
+        imgQRCode.image = generateQRCode("Marco Willems")
 
         // Do any additional setup after loading the view.
     }
+        
+    func generateQRCode(data: String) -> UIImage{
+        let inputMessage = data.dataUsingEncoding(NSISOLatin1StringEncoding)!
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter!.setValue(inputMessage, forKey: "inputMessage")
+        filter!.setValue("Q", forKey: "inputCorrectionLevel")
+        
+        let image = filter!.outputImage!
+        
+        let scaleX = imgQRCode.frame.size.width / image.extent.size.width
+        let scaleY = imgQRCode.frame.size.height / image.extent.size.height
+        
+        let transformedImage = image.imageByApplyingTransform(CGAffineTransformMakeScale(scaleX, scaleY))
+        
+        return UIImage(CIImage: transformedImage)
+    }
 
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -38,6 +59,4 @@ class RefferalViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
 }
