@@ -13,6 +13,10 @@ class NewsTableViewController: UITableViewController {
     @IBOutlet var extraButton:UIBarButtonItem!
 
     override func viewDidLoad() {
+        let account = Account()
+        if account.getId() == 0{
+            //segue!
+        }
         super.viewDidLoad()
 
         if revealViewController() != nil {
