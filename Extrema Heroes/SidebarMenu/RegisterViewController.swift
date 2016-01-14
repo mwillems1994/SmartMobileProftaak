@@ -10,11 +10,11 @@ import Foundation
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var tbFirstname: UITextField!
-    @IBOutlet weak var tbLastname: UITextField!
-    @IBOutlet weak var tbEmail: UITextField!
     @IBOutlet weak var tbPassword: UITextField!
+    @IBOutlet weak var tbEmail: UITextField!
+    @IBOutlet weak var tbLastname: UITextField!
     
-    @IBAction func btnCreateAccount(sender: UIButton) {
+    @IBAction func btnCreate(sender: UIButton) {
         DatabaseManager.sharedInstance.getAccountFromEmail(tbEmail.text!) { json in
             if(json.count > 0){
                 for (_ , subJson): (String, JSON) in json {
@@ -29,22 +29,24 @@ class RegisterViewController: UIViewController {
                 DatabaseManager.sharedInstance.getAccountFromEmail(self.tbEmail.text!) { json in
                     for (_ , subJson): (String, JSON) in json {
                         let accountJson:JSON = JSON(subJson.object)
-                        let id = Int(accountJson["ID"].string!)!
-                        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                        let _ = Account(
+                            id: Int(accountJson["ID"].string!)!,
+                            fbId: accountJson["FbID"].string!,
+                            email: accountJson["Email"].string!,
+                            firstname: accountJson["Firstname"].string!,
+                            lastname: accountJson["Lastname"].string!,
+                            imageURL: accountJson["ImageURL"].string!,
+                            password: self.tbPassword.text!
+                        )
                     }
                     NSUserDefaults.standardUserDefaults().synchronize()
                 }
+                sleep(1)
+                self.performSegueWithIdentifier("loginSuccess", sender:self)
             }
         }
-
-        
-        
-        
-        
-        
-        
-        
     }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
