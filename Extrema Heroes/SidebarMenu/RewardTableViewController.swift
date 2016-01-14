@@ -48,6 +48,7 @@ class RewardTableViewController: UITableViewController {
     
     func basicCellAtIndexPath(indexPath:NSIndexPath) -> RewardCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(basicCellIdentifier) as! RewardCell
+        setImage(cell, indexPath: indexPath)
         setDescription(cell, indexPath: indexPath)
         setPointsRequiredString(cell, indexPath: indexPath)
         return cell
@@ -63,6 +64,12 @@ class RewardTableViewController: UITableViewController {
         let reward = self.Rewards[indexPath.row] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
         cell.PointsLabel.text = pointRequiredString!
+    }
+    
+    func setImage(cell:RewardCell, indexPath:NSIndexPath) {
+        let reward = self.Rewards[indexPath.row] as Reward
+        let image = UIImage(named: "\(reward.Code)_locked")
+        cell.imIcon.image = image
     }
 }
 
