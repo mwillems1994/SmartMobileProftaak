@@ -19,7 +19,8 @@ class RewardTableViewController: UITableViewController {
                 tempReward = Reward(
                     ID: Int(rewardJson["RewardID"].string!)!,
                     PointsRequired: Int(rewardJson["PointsRequired"].string!)!,
-                    Description: rewardJson["Description"].string!
+                    Description: rewardJson["Description"].string!,
+                    Code: rewardJson["RewardCode"].string!
                 )
                 self.Rewards.append(tempReward)
             }

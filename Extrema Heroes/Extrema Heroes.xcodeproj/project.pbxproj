@@ -35,6 +35,20 @@
 		6DD81ADE1C3FC9590032D3E0 /* RewardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81ADD1C3FC9590032D3E0 /* RewardTableViewController.swift */; };
 		6DD81AE21C3FDB690032D3E0 /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81AE11C3FDB690032D3E0 /* RewardCell.swift */; };
 		6DD81AE41C4684AF0032D3E0 /* CodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81AE31C4684AF0032D3E0 /* CodeController.swift */; };
+		6DD81B121C47E0750032D3E0 /* Cola_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B041C47E0750032D3E0 /* Cola_locked.png */; };
+		6DD81B131C47E0750032D3E0 /* Cola_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B051C47E0750032D3E0 /* Cola_unlocked.png */; };
+		6DD81B141C47E0750032D3E0 /* Keychain_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B061C47E0750032D3E0 /* Keychain_locked.png */; };
+		6DD81B151C47E0750032D3E0 /* Keychain_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B071C47E0750032D3E0 /* Keychain_unlocked.png */; };
+		6DD81B161C47E0750032D3E0 /* Merchandise_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B081C47E0750032D3E0 /* Merchandise_locked.png */; };
+		6DD81B171C47E0750032D3E0 /* Merchandise_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B091C47E0750032D3E0 /* Merchandise_unlocked.png */; };
+		6DD81B181C47E0750032D3E0 /* RedBull_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0A1C47E0750032D3E0 /* RedBull_locked.png */; };
+		6DD81B191C47E0750032D3E0 /* RedBull_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0B1C47E0750032D3E0 /* RedBull_unlocked.png */; };
+		6DD81B1A1C47E0750032D3E0 /* Ticker10_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0C1C47E0750032D3E0 /* Ticker10_unlocked.png */; };
+		6DD81B1B1C47E0750032D3E0 /* Ticket_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0D1C47E0750032D3E0 /* Ticket_unlocked.png */; };
+		6DD81B1C1C47E0750032D3E0 /* Ticket10_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0E1C47E0750032D3E0 /* Ticket10_locked.png */; };
+		6DD81B1D1C47E0750032D3E0 /* Ticket20_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B0F1C47E0750032D3E0 /* Ticket20_locked.png */; };
+		6DD81B1E1C47E0750032D3E0 /* Ticket20_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B101C47E0750032D3E0 /* Ticket20_unlocked.png */; };
+		6DD81B1F1C47E0750032D3E0 /* Ticket30_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD81B111C47E0750032D3E0 /* Ticket30_locked.png */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47029FC1A7F27DB00E30A3C /* Images.xcassets */; };
 		F4702A0C1A7F27DC00E30A3C /* SidebarMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4702A0B1A7F27DC00E30A3C /* SidebarMenuTests.swift */; };
@@ -96,6 +110,20 @@
 		6DD81ADD1C3FC9590032D3E0 /* RewardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardTableViewController.swift; sourceTree = "<group>"; };
 		6DD81AE11C3FDB690032D3E0 /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
 		6DD81AE31C4684AF0032D3E0 /* CodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeController.swift; sourceTree = "<group>"; };
+		6DD81B041C47E0750032D3E0 /* Cola_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cola_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B051C47E0750032D3E0 /* Cola_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cola_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B061C47E0750032D3E0 /* Keychain_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keychain_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B071C47E0750032D3E0 /* Keychain_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keychain_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B081C47E0750032D3E0 /* Merchandise_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Merchandise_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B091C47E0750032D3E0 /* Merchandise_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Merchandise_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0A1C47E0750032D3E0 /* RedBull_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBull_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0B1C47E0750032D3E0 /* RedBull_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBull_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0C1C47E0750032D3E0 /* Ticker10_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticker10_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0D1C47E0750032D3E0 /* Ticket_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticket_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0E1C47E0750032D3E0 /* Ticket10_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticket10_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B0F1C47E0750032D3E0 /* Ticket20_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticket20_locked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B101C47E0750032D3E0 /* Ticket20_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticket20_unlocked.png; sourceTree = SOURCE_ROOT; };
+		6DD81B111C47E0750032D3E0 /* Ticket30_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ticket30_locked.png; sourceTree = SOURCE_ROOT; };
 		F47029F01A7F27DB00E30A3C /* Extrema Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Extrema Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029FA1A7F27DB00E30A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +181,7 @@
 		0A60860E1C16D9EB00A2EBB9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6DD81AE51C47DEA30032D3E0 /* RewardIcons */,
 				0A10D8551C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld */,
 				0A6DCA7B1C1995CE00152BA8 /* Coke.png */,
 				0A6DCA751C196C9C00152BA8 /* logo_w.png */,
@@ -171,6 +200,27 @@
 			);
 			name = images;
 			path = "../../Creative Cloud Files/Schooljaar 2/SMPT/SmartMobileProftaak/Gui_App_Extrema_Heroes/Gui_App_Extrema_Heroes";
+			sourceTree = "<group>";
+		};
+		6DD81AE51C47DEA30032D3E0 /* RewardIcons */ = {
+			isa = PBXGroup;
+			children = (
+				6DD81B041C47E0750032D3E0 /* Cola_locked.png */,
+				6DD81B051C47E0750032D3E0 /* Cola_unlocked.png */,
+				6DD81B061C47E0750032D3E0 /* Keychain_locked.png */,
+				6DD81B071C47E0750032D3E0 /* Keychain_unlocked.png */,
+				6DD81B081C47E0750032D3E0 /* Merchandise_locked.png */,
+				6DD81B091C47E0750032D3E0 /* Merchandise_unlocked.png */,
+				6DD81B0A1C47E0750032D3E0 /* RedBull_locked.png */,
+				6DD81B0B1C47E0750032D3E0 /* RedBull_unlocked.png */,
+				6DD81B0C1C47E0750032D3E0 /* Ticker10_unlocked.png */,
+				6DD81B0D1C47E0750032D3E0 /* Ticket_unlocked.png */,
+				6DD81B0E1C47E0750032D3E0 /* Ticket10_locked.png */,
+				6DD81B0F1C47E0750032D3E0 /* Ticket20_locked.png */,
+				6DD81B101C47E0750032D3E0 /* Ticket20_unlocked.png */,
+				6DD81B111C47E0750032D3E0 /* Ticket30_locked.png */,
+			);
+			name = RewardIcons;
 			sourceTree = "<group>";
 		};
 		F47029E71A7F27DB00E30A3C = {
@@ -363,20 +413,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD81B181C47E0750032D3E0 /* RedBull_locked.png in Resources */,
+				6DD81B191C47E0750032D3E0 /* RedBull_unlocked.png in Resources */,
+				6DD81B1E1C47E0750032D3E0 /* Ticket20_unlocked.png in Resources */,
 				0A6DCA7A1C197ADF00152BA8 /* main_photo_profile.png in Resources */,
 				0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */,
+				6DD81B1B1C47E0750032D3E0 /* Ticket_unlocked.png in Resources */,
 				0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
+				6DD81B1C1C47E0750032D3E0 /* Ticket10_locked.png in Resources */,
 				0A10D84A1C16FA1F008A0FB7 /* login.png in Resources */,
+				6DD81B1D1C47E0750032D3E0 /* Ticket20_locked.png in Resources */,
 				F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */,
+				6DD81B161C47E0750032D3E0 /* Merchandise_locked.png in Resources */,
+				6DD81B1F1C47E0750032D3E0 /* Ticket30_locked.png in Resources */,
 				0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */,
 				0A10D84E1C16FA1F008A0FB7 /* promote_2.png in Resources */,
 				0A10D84D1C16FA1F008A0FB7 /* promote_1.png in Resources */,
 				0A6DCA761C196C9C00152BA8 /* logo_w.png in Resources */,
+				6DD81B141C47E0750032D3E0 /* Keychain_locked.png in Resources */,
+				6DD81B131C47E0750032D3E0 /* Cola_unlocked.png in Resources */,
 				0A6DCA7C1C1995CE00152BA8 /* Coke.png in Resources */,
+				6DD81B1A1C47E0750032D3E0 /* Ticker10_unlocked.png in Resources */,
 				0A10D84F1C16FA1F008A0FB7 /* promote_3.png in Resources */,
 				0A10D8481C16FA1F008A0FB7 /* first_1.png in Resources */,
 				0A10D84C1C16FA1F008A0FB7 /* main_BG.png in Resources */,
 				0A10D8511C16FA1F008A0FB7 /* Splashscreen.png in Resources */,
+				6DD81B171C47E0750032D3E0 /* Merchandise_unlocked.png in Resources */,
+				6DD81B151C47E0750032D3E0 /* Keychain_unlocked.png in Resources */,
+				6DD81B121C47E0750032D3E0 /* Cola_locked.png in Resources */,
 				0A10D84B1C16FA1F008A0FB7 /* logo_03.png in Resources */,
 				0A10D8491C16FA1F008A0FB7 /* ios-icons in Resources */,
 				0A6DCA781C19704800152BA8 /* profile_pic.png in Resources */,

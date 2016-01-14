@@ -8,14 +8,16 @@
 
 import Foundation
 public class Reward : CustomStringConvertible{
-    public var description: String { return "ID: \(ID), Description: \(Description), PointsRequired: \(PointsRequired)" }
+    public var description: String { return "ID: \(ID), Description: \(Description), Code: \(Code), PointsRequired: \(PointsRequired)" }
     var ID : Int!
     var PointsRequired : Int!
     var Description : String!
+    var Code : String!
     
-    init(ID : Int, PointsRequired : Int, Description : String){
+    init(ID : Int, PointsRequired : Int, Description : String, Code: String){
         self.ID = ID
         self.PointsRequired = PointsRequired
         self.Description = Description
+        self.Code = Code
     }
 }
