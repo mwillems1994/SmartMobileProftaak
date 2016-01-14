@@ -49,36 +49,23 @@ class NewsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
+
 
         // Configure the cell...
         if indexPath.row == 0 {
-            cell.postImageView.image = UIImage(named: "main_photo_profile")
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
+            //cell.postImageView.image = UIImage(named: "main_photo_profile")
             cell.postTitleLabel.text = ""
             cell.authorLabel.text = "1/2 until next reward"
             cell.authorImageView.image = UIImage(named: "")
+            return cell
 
-        } else if indexPath.row == 1 {
-            cell.postImageView.image = UIImage(named: "")
-            cell.postTitleLabel.text = "Coca Cola or Redbull drink"
-            cell.authorLabel.text = "1/2"
-            cell.authorImageView.image = UIImage(named: "Coke")
-            
-        } else if indexPath.row == 2 {
-    cell.postImageView.image = UIImage(named: "")
-    cell.postTitleLabel.text = "Building a Chat App in Swift Using Multipeer Connectivity Framework"
-    cell.authorLabel.text = "Gabriel Theodoropoulos"
-    cell.authorImageView.image = UIImage(named: "appcoda-300")
-    
-    } else {
-            cell.postImageView.image = UIImage(named: "")
-            cell.postTitleLabel.text = "A Beginner’s Guide to Animated Custom Segues in iOS 8"
-            cell.authorLabel.text = "Gabriel Theodoropoulos"
-            cell.authorImageView.image = UIImage(named: "appcoda-300")
-            
+        }else{
+            let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
+            //cell2.DescriptionLabel.text! = "aohfdafd"
+            //cell2.PointsLabel.text! = "3..10"
+            return cell2
         }
-
-        return cell
     }
     
 
