@@ -14,7 +14,7 @@ class RewardTableViewController: UITableViewController {
     private func setRewards(){
         DatabaseManager.sharedInstance.getRewardsForEvent(1) { json in
             var tempReward : Reward
-            for (index, subJson): (String, JSON) in json {
+            for (_, subJson): (String, JSON) in json {
                 let rewardJson:JSON = JSON(subJson.object)
                 tempReward = Reward(
                     ID: Int(rewardJson["RewardID"].string!)!,
