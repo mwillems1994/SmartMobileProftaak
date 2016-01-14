@@ -11,9 +11,6 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
 
-struct myAccount {
-    static var me:Account!
-}
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     
@@ -22,7 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBAction func btnLogin(sender: UIButton) {
         var credentialCheck = false;
         DatabaseManager.sharedInstance.getCheckCredentials(tbUsername.text!, password: tbPassword.text!) { json in
-            for (index, subJson): (String, JSON) in json {
+            for (_, subJson): (String, JSON) in json {
                 let response:JSON = JSON(subJson.object)
                 if(response == true){
                     credentialCheck = true
@@ -35,10 +32,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         sleep(1)
         if(credentialCheck == true){
             DatabaseManager.sharedInstance.getAccountFromEmail(tbUsername.text!) { json in
-                var tempAccount : Account
-                for (index, subJson): (String, JSON) in json {
+                for (_, subJson): (String, JSON) in json {
                     let accountJson:JSON = JSON(subJson.object)
-                    tempAccount = Account(
+                    let _ = Account(
                         id: Int(accountJson["ID"].string!)!,
                         fbId: accountJson["FbID"].string!,
                         email: accountJson["Email"].string!,
@@ -47,7 +43,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         imageURL: accountJson["ImageURL"].string!,
                         password: self.tbPassword.text!
                     )
-                    myAccount.me = tempAccount
                 }
             }
             sleep(1)
@@ -64,7 +59,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func requireFacebook(){
         if(FBSDKAccessToken.currentAccessToken() != nil) {
             print("Al ingelogd");
-            myAccount.me = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
+            _ = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
             self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
         

@@ -15,8 +15,6 @@ class Account
 {
     init(facebookId:String)
     {
-        let id = 1
-        
         let facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(facebookId)/picture?width=150&length=150")
         if let data = NSData(contentsOfURL: facebookProfileUrl!)
         {
@@ -43,10 +41,31 @@ class Account
                     NSUserDefaults.standardUserDefaults().setObject(lastname, forKey: "ExtremaLastname")
                     NSUserDefaults.standardUserDefaults().setObject(email, forKey: "ExtremaEmail")
                     NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    DatabaseManager.sharedInstance.getAccountFromEmail(email) { json in
+                        if(json.count > 0){
+                            for (_ , subJson): (String, JSON) in json {
+                                let accountJson:JSON = JSON(subJson.object)
+                                let id = Int(accountJson["ID"].string!)!
+                                NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                            }
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                        }else{
+                            DatabaseManager.sharedInstance.createAccount(facebookId, email: email, firstname: firstname, lastname: lastname, password: "fAcEbO0kAP1L0g1N")
+                            sleep(1)
+                            DatabaseManager.sharedInstance.getAccountFromEmail(email) { json in
+                                for (_ , subJson): (String, JSON) in json {
+                                    let accountJson:JSON = JSON(subJson.object)
+                                    let id = Int(accountJson["ID"].string!)!
+                                    NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                                }
+                                NSUserDefaults.standardUserDefaults().synchronize()
+                            }
+                        }
+                    }
                 }
         }
         NSUserDefaults.standardUserDefaults().setObject(facebookId, forKey: "ExtremaFbId")
-        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     

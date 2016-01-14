@@ -62,7 +62,8 @@ class DatabaseManager:NSObject {
         })
     }
     
-    func createAccount(fbID: String, email: String, firstname: String, lastname: String, password: String){
+    func createAccount(fbID: String, var email: String, firstname: String, lastname: String, password: String){
+        email = email.stringByReplacingOccurrencesOfString("@", withString: "%40")
         let jsonAccount = "%7B%22FbID%22:%22\(fbID)%22,%22Email%22:%22\(email)%22,%22Firstname%22:%22\(firstname)%22,%22Lastname%22:%22\(lastname)%22,%22Password%22:%22\(password)%22%7D"
         executePost("insertAccount", value: jsonAccount)
     }

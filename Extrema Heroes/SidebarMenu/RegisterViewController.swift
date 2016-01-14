@@ -15,7 +15,35 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var tbPassword: UITextField!
     
     @IBAction func btnCreateAccount(sender: UIButton) {
-        DatabaseManager.sharedInstance.createAccount("", email: tbEmail.text!, firstname: tbFirstname.text!, lastname: tbLastname.text!, password: tbPassword.text!)
+        DatabaseManager.sharedInstance.getAccountFromEmail(tbEmail.text!) { json in
+            if(json.count > 0){
+                for (_ , subJson): (String, JSON) in json {
+                    let accountJson:JSON = JSON(subJson.object)
+                    let id = Int(accountJson["ID"].string!)!
+                    NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                }
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }else{
+                DatabaseManager.sharedInstance.createAccount("", email: self.tbEmail.text!, firstname: self.tbFirstname.text!, lastname: self.tbLastname.text!, password: self.tbPassword.text!)
+                sleep(1)
+                DatabaseManager.sharedInstance.getAccountFromEmail(self.tbEmail.text!) { json in
+                    for (_ , subJson): (String, JSON) in json {
+                        let accountJson:JSON = JSON(subJson.object)
+                        let id = Int(accountJson["ID"].string!)!
+                        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                    }
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                }
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+        
     }
     override func viewDidLoad()
     {
