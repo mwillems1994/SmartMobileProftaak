@@ -9,6 +9,8 @@
 import UIKit
 
 class RewardTableViewController: UITableViewController {
+    @IBOutlet weak var menuButton:UIBarButtonItem!
+    
     var Rewards = [Reward]()
     let basicCellIdentifier = "RewardCell"
     private func setRewards(){
@@ -34,6 +36,13 @@ class RewardTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if revealViewController() != nil {
+            menuButton.target = revealViewController()
+            menuButton.action = "revealToggle:"
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         setRewards()
         sleep(1)
     }
