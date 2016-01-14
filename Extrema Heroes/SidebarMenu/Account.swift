@@ -87,7 +87,10 @@ class Account
         return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFbId") as! String
     }
     func getId() -> Int{
+        if (NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") != nil){
         return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") as! Int
+        }
+        return 0
     }
     func getName() -> String{
          let fn = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") as! String
