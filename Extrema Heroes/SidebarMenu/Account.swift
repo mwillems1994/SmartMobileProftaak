@@ -15,7 +15,7 @@ class Account
 {
     init(facebookId:String)
     {
-        var id = 0
+        let id = 1
         
         let facebookProfileUrl = NSURL(string: "http://graph.facebook.com/\(facebookId)/picture?width=150&length=150")
         if let data = NSData(contentsOfURL: facebookProfileUrl!)
