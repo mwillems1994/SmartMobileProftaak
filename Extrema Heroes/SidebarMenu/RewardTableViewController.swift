@@ -96,10 +96,10 @@ class RewardTableViewController: UITableViewController {
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         var progress = (100.0 / Float(reward.PointsRequired)) * Float(points)
-        if(progress > 100.0){
+        if(progress >= 100.0){
             progress = 100.0
         }
-        cell.pvProgress.setProgress(progress, animated: false)
+        cell.pvProgress.setProgress(progress, animated: true)
     }
 }
 
