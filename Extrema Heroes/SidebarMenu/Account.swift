@@ -50,6 +50,7 @@ class Account
                                 NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
                             }
                             NSUserDefaults.standardUserDefaults().synchronize()
+                        
                         }else{
                             DatabaseManager.sharedInstance.createAccount(facebookId, email: email, firstname: firstname, lastname: lastname, password: "fAcEbO0kAP1L0g1N")
                             sleep(1)
@@ -69,7 +70,7 @@ class Account
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    init(id:Int, fbId: String, email: String, firstname: String, lastname: String, imageURL: String, password: String){
+    init(id:Int, fbId: String, email: String, firstname: String, lastname: String, imageURL: String, password: String, eventId: Int){
         NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
         NSUserDefaults.standardUserDefaults().setObject(fbId, forKey: "ExtremaFbId")
         NSUserDefaults.standardUserDefaults().setObject(firstname, forKey: "ExtremaFirstname")
@@ -83,15 +84,34 @@ class Account
         
     }
     
-    func getFacebookId() -> String{
-        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFbId") as! String
+    func getPointsFromDB(EventID: Int, AccountID: Int) -> Int{
+        var tempPoints = 0
+        DatabaseManager.sharedInstance.getPointsForAccount(1, accountID: getId()) { json in
+            for (_ , subJson): (String, JSON) in json {
+                let pointsJson:JSON = JSON(subJson.object)
+                let points = Int(pointsJson["Points"].string!)
+                tempPoints = points!
+            }
+        }
+        sleep(1)
+        return tempPoints
     }
+    
     func getId() -> Int{
         if (NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") != nil){
-        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") as! Int
+            return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") as! Int
         }
         return 0
     }
+    
+    func getPoints(EventId:Int) -> Int{
+        return getPointsFromDB(EventId, AccountID: getId())
+    }
+    
+    func getFacebookId() -> String{
+        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFbId") as! String
+    }
+        
     func getName() -> String{
          let fn = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") as! String
          let ln = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaLastname") as! String

@@ -62,6 +62,14 @@ class DatabaseManager:NSObject {
         })
     }
     
+    func getPointsForAccount(eventID: Int, accountID: Int, onCompletion: (JSON) -> Void){
+        let jsonAccountEvent = "%7B%22EventID%22:\(eventID),%22AccountID%22:\(accountID)%7D"
+        let route = self.apiURL + "?getPointsForAccount=\(jsonAccountEvent)"
+        makeHTTPGetRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
+    
     func createAccount(fbID: String, var email: String, firstname: String, lastname: String, password: String){
         email = email.stringByReplacingOccurrencesOfString("@", withString: "%40")
         let jsonAccount = "%7B%22FbID%22:%22\(fbID)%22,%22Email%22:%22\(email)%22,%22Firstname%22:%22\(firstname)%22,%22Lastname%22:%22\(lastname)%22,%22Password%22:%22\(password)%22%7D"

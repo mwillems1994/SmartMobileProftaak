@@ -41,7 +41,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         firstname: accountJson["Firstname"].string!,
                         lastname: accountJson["Lastname"].string!,
                         imageURL: accountJson["ImageURL"].string!,
-                        password: self.tbPassword.text!
+                        password: self.tbPassword.text!,
+                        eventId: 1
                     )
                 }
             }

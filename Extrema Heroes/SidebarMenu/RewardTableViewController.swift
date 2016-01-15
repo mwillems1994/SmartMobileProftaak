@@ -11,8 +11,10 @@ import UIKit
 class RewardTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
+    let account = Account()
     var Rewards = [Reward]()
     let basicCellIdentifier = "RewardCell"
+    var points = 0
     private func setRewards(){
         DatabaseManager.sharedInstance.getRewardsForEvent(1) { json in
             var tempReward : Reward
@@ -36,7 +38,7 @@ class RewardTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        points = account.getPoints(1)
         if revealViewController() != nil {
             menuButton.target = revealViewController()
             menuButton.action = "revealToggle:"
@@ -70,14 +72,22 @@ class RewardTableViewController: UITableViewController {
     }
     
     func setPointsRequiredString(cell:RewardCell, indexPath:NSIndexPath) {
+        let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
-        cell.PointsLabel.text = pointRequiredString!
+        cell.PointsLabel.text = "\(points) / \(pointRequiredString) points"
     }
     
     func setImage(cell:RewardCell, indexPath:NSIndexPath) {
+        let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
-        let image = UIImage(named: "\(reward.Code)_locked")
+        var image: UIImage
+        if(points >= reward.PointsRequired){
+            image = UIImage(named: "\(reward.Code)_unlocked")!
+        } else {
+            image = UIImage(named: "\(reward.Code)_locked")!
+        }
+        
         cell.imIcon.image = image
     }
 }
