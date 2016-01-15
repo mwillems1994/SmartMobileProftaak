@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tbFirstname: UITextField!
     @IBOutlet weak var tbPassword: UITextField!
     @IBOutlet weak var tbEmail: UITextField!
@@ -51,9 +51,17 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.tbEmail.delegate = self
+        self.tbFirstname.delegate = self
+        self.tbLastname.delegate = self
+        self.tbPassword.delegate = self
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

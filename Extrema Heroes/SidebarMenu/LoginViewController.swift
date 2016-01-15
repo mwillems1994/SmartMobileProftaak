@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var tbPassword: UITextField!
@@ -54,8 +54,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad()
     {
         requireFacebook()
+        self.tbUsername.delegate = self
+        self.tbPassword.delegate = self
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     func requireFacebook(){
         if(FBSDKAccessToken.currentAccessToken() != nil) {

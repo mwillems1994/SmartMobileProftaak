@@ -99,7 +99,7 @@ class RewardTableViewController: UITableViewController {
         if(progress >= 100.0){
             progress = 100.0
         }
-        cell.pvProgress.setProgress(progress, animated: true)
+        cell.pvProgress.setProgress(progress, animated: false)
     }
 }
 
