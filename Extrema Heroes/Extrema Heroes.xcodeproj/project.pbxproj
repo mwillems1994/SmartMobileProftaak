@@ -19,7 +19,7 @@
 		0A10D84D1C16FA1F008A0FB7 /* promote_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8431C16FA1F008A0FB7 /* promote_1.png */; };
 		0A10D84E1C16FA1F008A0FB7 /* promote_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8441C16FA1F008A0FB7 /* promote_2.png */; };
 		0A10D84F1C16FA1F008A0FB7 /* promote_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8451C16FA1F008A0FB7 /* promote_3.png */; };
-		0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8461C16FA1F008A0FB7 /* Register.png */; };
+		0A10D8501C16FA1F008A0FB7 /* Register2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8461C16FA1F008A0FB7 /* Register2.png */; };
 		0A10D8511C16FA1F008A0FB7 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */; };
 		0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */; };
 		0A389C1C1C1AC58700FACFBD /* RefferalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */; };
@@ -70,6 +70,20 @@
 		F5E663CB1C19A67100A41751 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E663CA1C19A67100A41751 /* Account.swift */; };
 		F5E664121C1ADFFA00A41751 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E664111C1ADFFA00A41751 /* DatabaseManager.swift */; };
 		F5E664141C1AE61100A41751 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E664131C1AE61100A41751 /* SwiftyJSON.swift */; };
+		F5FD376C1C49040700C129F2 /* Already_have_acc.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37601C49040700C129F2 /* Already_have_acc.png */; };
+		F5FD376D1C49040700C129F2 /* Click_here.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37611C49040700C129F2 /* Click_here.png */; };
+		F5FD376E1C49040700C129F2 /* Create_account.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37621C49040700C129F2 /* Create_account.png */; };
+		F5FD376F1C49040700C129F2 /* line in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37631C49040700C129F2 /* line */; };
+		F5FD37701C49040700C129F2 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37641C49040700C129F2 /* Login.png */; };
+		F5FD37711C49040700C129F2 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37651C49040700C129F2 /* Logo.png */; };
+		F5FD37721C49040700C129F2 /* main_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37661C49040700C129F2 /* main_BG.png */; };
+		F5FD37731C49040700C129F2 /* Manuel_code.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37671C49040700C129F2 /* Manuel_code.png */; };
+		F5FD37741C49040700C129F2 /* no_account.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37681C49040700C129F2 /* no_account.png */; };
+		F5FD37751C49040700C129F2 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37691C49040700C129F2 /* Register.png */; };
+		F5FD37761C49040700C129F2 /* Scan_QR_code.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD376A1C49040700C129F2 /* Scan_QR_code.png */; };
+		F5FD37771C49040700C129F2 /* Submit.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD376B1C49040700C129F2 /* Submit.png */; };
+		F5FD37791C49161200C129F2 /* Register_label.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD37781C49161200C129F2 /* Register_label.png */; };
+		F5FD377D1C4918A400C129F2 /* Back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F5FD377C1C4918A400C129F2 /* Back_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +109,7 @@
 		0A10D8431C16FA1F008A0FB7 /* promote_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = promote_1.png; path = images/promote_1.png; sourceTree = SOURCE_ROOT; };
 		0A10D8441C16FA1F008A0FB7 /* promote_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = promote_2.png; path = images/promote_2.png; sourceTree = SOURCE_ROOT; };
 		0A10D8451C16FA1F008A0FB7 /* promote_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = promote_3.png; path = images/promote_3.png; sourceTree = SOURCE_ROOT; };
-		0A10D8461C16FA1F008A0FB7 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Register.png; path = images/Register.png; sourceTree = SOURCE_ROOT; };
+		0A10D8461C16FA1F008A0FB7 /* Register2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Register2.png; path = images/Register2.png; sourceTree = SOURCE_ROOT; };
 		0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = images/Splashscreen.png; sourceTree = SOURCE_ROOT; };
 		0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0A389C1B1C1AC58700FACFBD /* RefferalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefferalViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +165,20 @@
 		F5E663CA1C19A67100A41751 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F5E664111C1ADFFA00A41751 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		F5E664131C1AE61100A41751 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		F5FD37601C49040700C129F2 /* Already_have_acc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Already_have_acc.png; sourceTree = SOURCE_ROOT; };
+		F5FD37611C49040700C129F2 /* Click_here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Click_here.png; sourceTree = SOURCE_ROOT; };
+		F5FD37621C49040700C129F2 /* Create_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Create_account.png; sourceTree = SOURCE_ROOT; };
+		F5FD37631C49040700C129F2 /* line */ = {isa = PBXFileReference; lastKnownFileType = file; path = line; sourceTree = SOURCE_ROOT; };
+		F5FD37641C49040700C129F2 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = SOURCE_ROOT; };
+		F5FD37651C49040700C129F2 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = SOURCE_ROOT; };
+		F5FD37661C49040700C129F2 /* main_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_BG.png; sourceTree = SOURCE_ROOT; };
+		F5FD37671C49040700C129F2 /* Manuel_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Manuel_code.png; sourceTree = SOURCE_ROOT; };
+		F5FD37681C49040700C129F2 /* no_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_account.png; sourceTree = SOURCE_ROOT; };
+		F5FD37691C49040700C129F2 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Register.png; sourceTree = SOURCE_ROOT; };
+		F5FD376A1C49040700C129F2 /* Scan_QR_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scan_QR_code.png; sourceTree = SOURCE_ROOT; };
+		F5FD376B1C49040700C129F2 /* Submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Submit.png; sourceTree = SOURCE_ROOT; };
+		F5FD37781C49161200C129F2 /* Register_label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Register_label.png; sourceTree = SOURCE_ROOT; };
+		F5FD377C1C4918A400C129F2 /* Back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back_button.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +209,7 @@
 		0A60860E1C16D9EB00A2EBB9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F5FD375F1C4903BF00C129F2 /* Screens */,
 				6DD81AE51C47DEA30032D3E0 /* RewardIcons */,
 				0A10D8551C16FBED008A0FB7 /* Gui_App_Extrema_Heroes.xcdatamodeld */,
 				0A6DCA7B1C1995CE00152BA8 /* Coke.png */,
@@ -195,7 +224,7 @@
 				0A10D8431C16FA1F008A0FB7 /* promote_1.png */,
 				0A10D8441C16FA1F008A0FB7 /* promote_2.png */,
 				0A10D8451C16FA1F008A0FB7 /* promote_3.png */,
-				0A10D8461C16FA1F008A0FB7 /* Register.png */,
+				0A10D8461C16FA1F008A0FB7 /* Register2.png */,
 				0A10D8471C16FA1F008A0FB7 /* Splashscreen.png */,
 			);
 			name = images;
@@ -326,6 +355,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F5FD375F1C4903BF00C129F2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD37601C49040700C129F2 /* Already_have_acc.png */,
+				F5FD37611C49040700C129F2 /* Click_here.png */,
+				F5FD37781C49161200C129F2 /* Register_label.png */,
+				F5FD377C1C4918A400C129F2 /* Back_button.png */,
+				F5FD37621C49040700C129F2 /* Create_account.png */,
+				F5FD37631C49040700C129F2 /* line */,
+				F5FD37641C49040700C129F2 /* Login.png */,
+				F5FD37651C49040700C129F2 /* Logo.png */,
+				F5FD37661C49040700C129F2 /* main_BG.png */,
+				F5FD37671C49040700C129F2 /* Manuel_code.png */,
+				F5FD37681C49040700C129F2 /* no_account.png */,
+				F5FD37691C49040700C129F2 /* Register.png */,
+				F5FD376A1C49040700C129F2 /* Scan_QR_code.png */,
+				F5FD376B1C49040700C129F2 /* Submit.png */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,23 +464,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DD81B181C47E0750032D3E0 /* RedBull_locked.png in Resources */,
+				F5FD37731C49040700C129F2 /* Manuel_code.png in Resources */,
 				6DD81B191C47E0750032D3E0 /* RedBull_unlocked.png in Resources */,
 				6DD81B1E1C47E0750032D3E0 /* Ticket20_unlocked.png in Resources */,
 				0A6DCA7A1C197ADF00152BA8 /* main_photo_profile.png in Resources */,
 				0A10D85D1C16FFB6008A0FB7 /* Launch Screen.storyboard in Resources */,
+				F5FD37771C49040700C129F2 /* Submit.png in Resources */,
+				F5FD37741C49040700C129F2 /* no_account.png in Resources */,
 				6DD81B1B1C47E0750032D3E0 /* Ticket_unlocked.png in Resources */,
 				0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
 				6DD81B1C1C47E0750032D3E0 /* Ticket10_locked.png in Resources */,
+				F5FD376D1C49040700C129F2 /* Click_here.png in Resources */,
 				0A10D84A1C16FA1F008A0FB7 /* login.png in Resources */,
 				6DD81B1D1C47E0750032D3E0 /* Ticket20_locked.png in Resources */,
+				F5FD377D1C4918A400C129F2 /* Back_button.png in Resources */,
 				F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */,
 				6DD81B161C47E0750032D3E0 /* Merchandise_locked.png in Resources */,
 				6DD81B1F1C47E0750032D3E0 /* Ticket30_locked.png in Resources */,
-				0A10D8501C16FA1F008A0FB7 /* Register.png in Resources */,
+				0A10D8501C16FA1F008A0FB7 /* Register2.png in Resources */,
+				F5FD376C1C49040700C129F2 /* Already_have_acc.png in Resources */,
 				0A10D84E1C16FA1F008A0FB7 /* promote_2.png in Resources */,
 				0A10D84D1C16FA1F008A0FB7 /* promote_1.png in Resources */,
+				F5FD37761C49040700C129F2 /* Scan_QR_code.png in Resources */,
 				0A6DCA761C196C9C00152BA8 /* logo_w.png in Resources */,
 				6DD81B141C47E0750032D3E0 /* Keychain_locked.png in Resources */,
+				F5FD37751C49040700C129F2 /* Register.png in Resources */,
 				6DD81B131C47E0750032D3E0 /* Cola_unlocked.png in Resources */,
 				0A6DCA7C1C1995CE00152BA8 /* Coke.png in Resources */,
 				6DD81B1A1C47E0750032D3E0 /* Ticker10_unlocked.png in Resources */,
@@ -443,7 +501,13 @@
 				6DD81B121C47E0750032D3E0 /* Cola_locked.png in Resources */,
 				0A10D84B1C16FA1F008A0FB7 /* logo_03.png in Resources */,
 				0A10D8491C16FA1F008A0FB7 /* ios-icons in Resources */,
+				F5FD376F1C49040700C129F2 /* line in Resources */,
+				F5FD37711C49040700C129F2 /* Logo.png in Resources */,
+				F5FD37701C49040700C129F2 /* Login.png in Resources */,
+				F5FD37721C49040700C129F2 /* main_BG.png in Resources */,
+				F5FD37791C49161200C129F2 /* Register_label.png in Resources */,
 				0A6DCA781C19704800152BA8 /* profile_pic.png in Resources */,
+				F5FD376E1C49040700C129F2 /* Create_account.png in Resources */,
 				F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */,
 				F5E663C41C19A64300A41751 /* FacebookSDKStrings.bundle in Resources */,
 			);
