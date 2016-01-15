@@ -62,6 +62,7 @@ class RewardTableViewController: UITableViewController {
         setImage(cell, indexPath: indexPath)
         setDescription(cell, indexPath: indexPath)
         setPointsRequiredString(cell, indexPath: indexPath)
+        setProgressView(cell, indexPath: indexPath)
         return cell
     }
     
@@ -89,6 +90,13 @@ class RewardTableViewController: UITableViewController {
         }
         
         cell.imIcon.image = image
+    }
+    
+    func setProgressView(cell:RewardCell, indexPath: NSIndexPath){
+        let points = self.points
+        let reward = self.Rewards[indexPath.row] as Reward
+        let progress = (100.0 / Float(reward.PointsRequired)) * Float(points)
+        print("Progress: \(progress)")
     }
 }
 

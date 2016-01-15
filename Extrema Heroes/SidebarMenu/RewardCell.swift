@@ -9,7 +9,9 @@
 import UIKit
 
 class RewardCell: UITableViewCell {
+    @IBOutlet weak var pvProgress: UIProgressView!
     @IBOutlet weak var imIcon: UIImageView!
     @IBOutlet weak var PointsLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
+    
 }
