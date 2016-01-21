@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFbId")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFirstname")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaLastname")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaEmail")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaImageURL")
     
     
         
