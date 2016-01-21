@@ -24,7 +24,7 @@ public class Event : CustomStringConvertible{
     
     private func getRewards(){
             RestApiManager.sharedInstance.getRewardsForEvent(1) { json in
-                for (index, subJson): (String, JSON) in json {
+                for (_, subJson): (String, JSON) in json {
                     let rewardJSON:JSON = JSON(subJson.object)
                     let tempReward:Reward
                     tempReward = Reward(
