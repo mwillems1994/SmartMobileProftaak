@@ -29,7 +29,6 @@
 		0A6DCA781C19704800152BA8 /* profile_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA771C19704800152BA8 /* profile_pic.png */; };
 		0A6DCA7A1C197ADF00152BA8 /* main_photo_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA791C197ADF00152BA8 /* main_photo_profile.png */; };
 		0A6DCA7C1C1995CE00152BA8 /* Coke.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DCA7B1C1995CE00152BA8 /* Coke.png */; };
-		0AEFD18C1C50F433009CE10F /* Tab icons in Resources */ = {isa = PBXBuildFile; fileRef = 0AEFD18B1C50F433009CE10F /* Tab icons */; };
 		6D4658F71C199A4900AD283F /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4658F61C199A4900AD283F /* BarcodeViewController.swift */; };
 		6DB79F281C1DE092002D163B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB79F271C1DE092002D163B /* RegisterViewController.swift */; };
 		6DD81ADC1C3FC75C0032D3E0 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD81ADB1C3FC75C0032D3E0 /* Reward.swift */; };
@@ -119,7 +118,6 @@
 		0A6DCA771C19704800152BA8 /* profile_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_pic.png; path = images/profile_pic.png; sourceTree = SOURCE_ROOT; };
 		0A6DCA791C197ADF00152BA8 /* main_photo_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_photo_profile.png; path = images/main_photo_profile.png; sourceTree = SOURCE_ROOT; };
 		0A6DCA7B1C1995CE00152BA8 /* Coke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coke.png; path = images/Coke.png; sourceTree = SOURCE_ROOT; };
-		0AEFD18B1C50F433009CE10F /* Tab icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Tab icons"; sourceTree = SOURCE_ROOT; };
 		6D4658F61C199A4900AD283F /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		6DB79F271C1DE092002D163B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6DD81ADB1C3FC75C0032D3E0 /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				F4D750141BD38E56009E1003 /* SWRevealViewController */,
 				F47029FC1A7F27DB00E30A3C /* Images.xcassets */,
 				F47029F91A7F27DB00E30A3C /* Main.storyboard */,
-				0AEFD18B1C50F433009CE10F /* Tab icons */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				F4702A171A7F351C00E30A3C /* MenuController.swift */,
 				6DD81AE31C4684AF0032D3E0 /* CodeController.swift */,
@@ -478,7 +475,6 @@
 				0A6DCA741C19691900152BA8 /* Gui_App_Extrema_Heroes.xcdatamodeld in Resources */,
 				6DD81B1C1C47E0750032D3E0 /* Ticket10_locked.png in Resources */,
 				F5FD376D1C49040700C129F2 /* Click_here.png in Resources */,
-				0AEFD18C1C50F433009CE10F /* Tab icons in Resources */,
 				0A10D84A1C16FA1F008A0FB7 /* login.png in Resources */,
 				6DD81B1D1C47E0750032D3E0 /* Ticket20_locked.png in Resources */,
 				F5FD377D1C4918A400C129F2 /* Back_button.png in Resources */,
