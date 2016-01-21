@@ -147,7 +147,7 @@ class Account
         return decodedimage
     }
     
-    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
+    private func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
         let imageView: UIImageView = UIImageView(image: image)
         var layer: CALayer = CALayer()
         layer = imageView.layer

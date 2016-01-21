@@ -10,7 +10,11 @@ import UIKit
 
 class MenuController: UITableViewController {
 
+    @IBOutlet weak var profilepicture: UIImageView!
+    
+    let account = Account()
     override func viewDidLoad() {
+        profilepicture.image = account.getProfilePicture()
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
