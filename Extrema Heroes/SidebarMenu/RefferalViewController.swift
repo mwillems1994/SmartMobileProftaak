@@ -12,6 +12,7 @@ class RefferalViewController: UIViewController {
     @IBOutlet weak var imgQRCode: UIImageView!
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    let account = Account()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class RefferalViewController: UIViewController {
         }
         
         
-        imgQRCode.image = generateQRCode("Marco Willems")
+        imgQRCode.image = generateQRCode("1_\(account.getId())")
 
         // Do any additional setup after loading the view.
     }
