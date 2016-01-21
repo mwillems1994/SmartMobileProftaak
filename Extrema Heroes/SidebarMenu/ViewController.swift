@@ -34,6 +34,7 @@ class ViewController: UIViewController, BarcodeDelegate {
     
     func barcodeReaded(barcode: String) {
         self.tbCode.text! = barcode
+        //commit text
     }
     
 }
