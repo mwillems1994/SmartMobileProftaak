@@ -31,7 +31,7 @@ class NewsTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
             setRewards()
-            sleep(1)
+            self.tableView.reloadData()
         }
     }
     
@@ -51,6 +51,7 @@ class NewsTableViewController: UITableViewController {
                 self.Rewards.append(tempReward)
                 }
             }
+            self.tableView.reloadData()
         }
     }
 
@@ -76,12 +77,18 @@ class NewsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Configure the cell...
         if indexPath.row == 0 {
+            self.tableView.rowHeight = 220.0
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
             //cell.postImageView.image = UIImage(named: "main_photo_profile")
             cell.postTitleLabel.text = account.getName()
-            cell.authorLabel.text = "\(self.points)/\(self.Rewards[0].PointsRequired) until next reward"
             cell.authorImageView.image = account.getProfilePicture()
-            cell.pvProgress.setProgress((1.0 / Float(self.Rewards[0].PointsRequired)) * Float(self.points), animated: false)
+            if(self.Rewards.count > 0){
+                cell.authorLabel.text = "\(self.points)/\(self.Rewards[0].PointsRequired) until next reward"
+                cell.pvProgress.setProgress((1.0 / Float(self.Rewards[0].PointsRequired)) * Float(self.points), animated: true)
+            }else{
+                cell.authorLabel.text = ""
+                cell.pvProgress.setProgress(1.0, animated: true)
+            }
             return cell
         } else {
             self.tableView.rowHeight = 132.0
@@ -124,8 +131,7 @@ class NewsTableViewController: UITableViewController {
     func setProgressView(cell:RewardCell, index: Int){
         let points = self.points
         let reward = self.Rewards[index] as Reward
-        var progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
+        let progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
         cell.pvProgress.setProgress(progress, animated: true)
     }
-
 }

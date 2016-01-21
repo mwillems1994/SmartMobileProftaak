@@ -28,6 +28,7 @@ class RewardTableViewController: UITableViewController {
                 )
                 self.Rewards.append(tempReward)
             }
+            self.tableView.reloadData()
         }
     }
     override func didReceiveMemoryWarning() {
@@ -46,7 +47,10 @@ class RewardTableViewController: UITableViewController {
         }
         
         setRewards()
-        sleep(1)
+        if(self.Rewards.count == 0){
+            sleep(1)
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,10 +63,12 @@ class RewardTableViewController: UITableViewController {
     
     func basicCellAtIndexPath(indexPath:NSIndexPath) -> RewardCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(basicCellIdentifier) as! RewardCell
-        setImage(cell, indexPath: indexPath)
-        setDescription(cell, indexPath: indexPath)
-        setPointsRequiredString(cell, indexPath: indexPath)
-        setProgressView(cell, indexPath: indexPath)
+        if(self.Rewards.count > 0 && indexPath.row < self.Rewards.count){
+            setImage(cell, indexPath: indexPath)
+            setDescription(cell, indexPath: indexPath)
+            setPointsRequiredString(cell, indexPath: indexPath)
+            setProgressView(cell, indexPath: indexPath)
+        }
         return cell
     }
     
@@ -96,6 +102,9 @@ class RewardTableViewController: UITableViewController {
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         var progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
+        if (progress > 1.0){
+            progress = 1.0
+        }
         cell.pvProgress.setProgress(progress, animated: true)
     }
 }

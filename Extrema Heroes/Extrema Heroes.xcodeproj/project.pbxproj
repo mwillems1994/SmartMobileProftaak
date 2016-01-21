@@ -255,8 +255,8 @@
 		F47029E71A7F27DB00E30A3C = {
 			isa = PBXGroup;
 			children = (
-				F5E663CC1C19A72500A41751 /* Frameworks */,
 				0A10D85A1C16FE32008A0FB7 /* Launch Screen.storyboard */,
+				F5E663CC1C19A72500A41751 /* Frameworks */,
 				F47029F21A7F27DB00E30A3C /* SidebarMenu */,
 				F4702A081A7F27DC00E30A3C /* SidebarMenuTests */,
 				F47029F11A7F27DB00E30A3C /* Products */,

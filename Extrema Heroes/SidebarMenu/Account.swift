@@ -105,7 +105,17 @@ class Account
     }
     
     func getPoints(EventId:Int) -> Int{
-        return getPointsFromDB(EventId, AccountID: getId())
+        let points = getPointsFromDB(EventId, AccountID: getId())
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ExtremaPoints") != nil){
+            if((NSUserDefaults.standardUserDefaults().objectForKey("ExtremaPoints") as! Int) < points){
+                NSUserDefaults.standardUserDefaults().setObject(points, forKey: "ExtremaPoints")
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }else{
+            NSUserDefaults.standardUserDefaults().setObject(points, forKey: "ExtremaPoints")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaPoints") as! Int
     }
     
     func getFacebookId() -> String{
@@ -137,6 +147,10 @@ class Account
         return base64String
     }
     private func DecodeImage() -> UIImage{
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ExtremaImageURL") == nil){
+            return UIImage(named: "main_photo_profile")!
+        }
+        
         let imageURL = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaImageURL") as! String
         if(imageURL.isEmpty || imageURL == " "){
             return UIImage(named: "main_photo_profile")!

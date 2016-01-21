@@ -2,4 +2,70 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SidebarMenu/ViewController.swift"
+            timestampString = "475079941.116993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "barcodeReaded(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Extrema_Heroes.ViewController.barcodeReaded (Extrema_Heroes.ViewController)(Swift.String) -&gt; ()"
+                  moduleName = "Extrema Heroes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fhict/Desktop/SmartMobileProftaak/SmartMobileProftaak/Extrema%20Heroes/SidebarMenu/ViewController.swift"
+                  timestampString = "475078306.001838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "protocol witness for Extrema_Heroes.BarcodeDelegate.barcodeReaded &lt;A where A: Extrema_Heroes.BarcodeDelegate&gt; (A)(Swift.String) -&gt; () in conformance Extrema_Heroes.ViewController : Extrema_Heroes.BarcodeDelegate in Extrema_Heroes"
+                  moduleName = "Extrema Heroes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fhict/Desktop/SmartMobileProftaak/SmartMobileProftaak/Extrema%20Heroes/SidebarMenu/ViewController.swift"
+                  timestampString = "475078306.002132"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SidebarMenu/ViewController.swift"
+            timestampString = "475079941.116993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

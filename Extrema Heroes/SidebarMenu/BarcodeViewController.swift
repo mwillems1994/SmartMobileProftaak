@@ -61,7 +61,7 @@ class BarcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        // This is the delegate'smethod that is called when a code is readed
+        // This is the delegate's method that is called when a code is readed
         for metadata in metadataObjects {
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
             let code = readableObject.stringValue

@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, BarcodeDelegate {
 @IBOutlet weak var tbCode: UITextField!
+    @IBAction func btnSubmit(sender: UIButton) {
+        let barcode = self.DecodeString(tbCode.text!)
+        print(barcode)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,27 @@ class ViewController: UIViewController, BarcodeDelegate {
     }
     
     func barcodeReaded(barcode: String) {
-        self.tbCode.text? = "code: \(barcode)"
+        let utf8str = barcode.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64Encoded = utf8str!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        self.tbCode.text! = base64Encoded
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "BarcodeScanner"{
+            let barcodeViewController: BarcodeViewController = segue.destinationViewController as! BarcodeViewController
+            barcodeViewController.delegate = self
+        }
+    }
+    
+    private func EncodeString(barcode: String)-> String{
+        let utf8str = barcode.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64String = utf8str!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        return base64String
+    }
+    private func DecodeString(encodedString: String) -> String{
+        let decodedData = NSData(base64EncodedString: encodedString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        let decodedString =  NSString(data: decodedData!, encoding: NSUTF8StringEncoding)
+        return String(decodedString)
     }
     
 }

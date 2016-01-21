@@ -26,8 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("FirstLogin")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
+        }else{
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
         }
-        
+    
         
         let pageControl = UIPageControl.appearance()
         
