@@ -79,6 +79,7 @@ class NewsTableViewController: UITableViewController {
 
         // Configure the cell...
         if indexPath.row == 0 {
+            self.tableView.rowHeight = 218.0
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
             //cell.postImageView.image = UIImage(named: "main_photo_profile")
             cell.postTitleLabel.text = account.getName()
@@ -86,6 +87,17 @@ class NewsTableViewController: UITableViewController {
             cell.authorImageView.image = account.getProfilePicture()
             return cell
 
+<<<<<<< HEAD
+=======
+        } else {
+            self.tableView.rowHeight = 132.0
+            let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
+            setImage(cell2, indexPath: indexPath)
+            setDescription(cell2, indexPath: indexPath)
+            setPointsRequiredString(cell2, indexPath: indexPath)
+            setProgressView(cell2, indexPath: indexPath)
+            return cell2
+>>>>>>> origin/master
         }
         
         let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
