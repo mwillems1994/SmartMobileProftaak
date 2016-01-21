@@ -85,7 +85,6 @@ class NewsTableViewController: UITableViewController {
             cell.authorLabel.text = "1/2 until next reward"
             cell.authorImageView.image = account.getProfilePicture()
             return cell
-<<<<<<< HEAD
         } else {
             self.tableView.rowHeight = 132.0
             let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
@@ -94,9 +93,6 @@ class NewsTableViewController: UITableViewController {
             setPointsRequiredString(cell2, indexPath: indexPath)
             setProgressView(cell2, indexPath: indexPath)
             return cell2
-=======
-
->>>>>>> parent of 1665e01... Merge remote-tracking branch 'origin/master'
         }
         
         let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
