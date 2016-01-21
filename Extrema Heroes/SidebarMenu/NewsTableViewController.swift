@@ -68,48 +68,48 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return self.Rewards.count
+        return self.Rewards.count + 1
         
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-
         // Configure the cell...
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
             //cell.postImageView.image = UIImage(named: "main_photo_profile")
             cell.postTitleLabel.text = account.getName()
-            cell.authorLabel.text = "1/2 until next reward"
+            cell.authorLabel.text = "\(self.points)/\(self.Rewards[0].PointsRequired) until next reward"
             cell.authorImageView.image = account.getProfilePicture()
             return cell
         } else {
             self.tableView.rowHeight = 132.0
             let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
-            setImage(cell2, indexPath: indexPath)
-            setDescription(cell2, indexPath: indexPath)
-            setPointsRequiredString(cell2, indexPath: indexPath)
-            setProgressView(cell2, indexPath: indexPath)
+            let index = -1 + indexPath.row
+            setImage(cell2, index: index)
+            setDescription(cell2, index: index)
+            setPointsRequiredString(cell2, index: index)
+            setProgressView(cell2, index: index)
             return cell2
         }
     }
-    func setDescription(cell:RewardCell, indexPath:NSIndexPath) {
-        let reward = self.Rewards[indexPath.row] as Reward
+    
+    func setDescription(cell:RewardCell, index: Int) {
+        let reward = self.Rewards[index] as Reward
         let description: String! = reward.Description
         cell.DescriptionLabel.text = description!
     }
     
-    func setPointsRequiredString(cell:RewardCell, indexPath:NSIndexPath) {
+    func setPointsRequiredString(cell:RewardCell, index: Int) {
         let points = self.points
-        let reward = self.Rewards[indexPath.row] as Reward
+        let reward = self.Rewards[index] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
         cell.PointsLabel.text = "\(points) / \(pointRequiredString) points"
     }
     
-    func setImage(cell:RewardCell, indexPath:NSIndexPath) {
+    func setImage(cell:RewardCell, index: Int) {
         let points = self.points
-        let reward = self.Rewards[indexPath.row] as Reward
+        let reward = self.Rewards[index] as Reward
         var image: UIImage
         if(points >= reward.PointsRequired){
             image = UIImage(named: "\(reward.Code)_unlocked")!
@@ -120,9 +120,9 @@ class NewsTableViewController: UITableViewController {
         cell.imIcon.image = image
     }
     
-    func setProgressView(cell:RewardCell, indexPath: NSIndexPath){
+    func setProgressView(cell:RewardCell, index: Int){
         let points = self.points
-        let reward = self.Rewards[indexPath.row] as Reward
+        let reward = self.Rewards[index] as Reward
         var progress = (100.0 / Float(reward.PointsRequired)) * Float(points)
         if(progress >= 100.0){
             progress = 100.0
