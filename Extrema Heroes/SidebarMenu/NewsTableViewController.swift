@@ -69,7 +69,8 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 4
+        return self.Rewards.count
+        
     }
 
     
@@ -80,19 +81,19 @@ class NewsTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
             //cell.postImageView.image = UIImage(named: "main_photo_profile")
-            cell.postTitleLabel.text = ""
+            cell.postTitleLabel.text = account.getName()
             cell.authorLabel.text = "1/2 until next reward"
-            cell.authorImageView.image = UIImage(named: "")
+            cell.authorImageView.image = account.getProfilePicture()
             return cell
 
-        }else{
-            let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
-            setImage(cell2, indexPath: indexPath)
-            setDescription(cell2, indexPath: indexPath)
-            setPointsRequiredString(cell2, indexPath: indexPath)
-            setProgressView(cell2, indexPath: indexPath)
-            return cell2
         }
+        
+        let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
+        setImage(cell2, indexPath: indexPath)
+        setDescription(cell2, indexPath: indexPath)
+        setPointsRequiredString(cell2, indexPath: indexPath)
+        setProgressView(cell2, indexPath: indexPath)
+        return cell2
     }
     func setDescription(cell:RewardCell, indexPath:NSIndexPath) {
         let reward = self.Rewards[indexPath.row] as Reward
@@ -127,7 +128,7 @@ class NewsTableViewController: UITableViewController {
         if(progress >= 100.0){
             progress = 100.0
         }
-        cell.pvProgress.setProgress(progress, animated: true)
+        cell.pvProgress.setProgress(progress, animated: false)
     }
 
 }

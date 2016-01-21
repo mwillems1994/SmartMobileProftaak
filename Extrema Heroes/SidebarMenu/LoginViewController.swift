@@ -67,6 +67,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFie
         if(FBSDKAccessToken.currentAccessToken() != nil) {
             print("Al ingelogd");
             _ = Account(facebookId: FBSDKAccessToken.currentAccessToken().userID)
+            sleep(1)
             self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
         

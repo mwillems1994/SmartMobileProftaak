@@ -113,6 +113,7 @@ class Account
     }
         
     func getName() -> String{
+         
          let fn = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") as! String
          let ln = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaLastname") as! String
         return fn + " " + ln
@@ -135,8 +136,28 @@ class Account
     }
     private func DecodeImage() -> UIImage{
         let imageURL = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaImageURL") as! String
-        let decodedData = NSData(base64EncodedString: imageURL, options: NSDataBase64DecodingOptions(rawValue: 0))
-        let decodedimage = UIImage(data: decodedData!)
-        return decodedimage! as UIImage
+        if(imageURL.isEmpty || imageURL == " "){
+            return UIImage(named: "main_photo_profile")!
+        }
+        
+        let decodedData = NSData(base64EncodedString: imageURL, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+        let decodedimage = maskRoundedImage(UIImage(data: decodedData!)!, radius: 80)
+        return decodedimage
+    }
+    
+    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
+        let imageView: UIImageView = UIImageView(image: image)
+        var layer: CALayer = CALayer()
+        layer = imageView.layer
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = CGFloat(radius)
+        
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return roundedImage
     }
 }
