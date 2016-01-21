@@ -28,8 +28,9 @@ class RewardTableViewController: UITableViewController {
                 )
                 self.Rewards.append(tempReward)
             }
-            sleep(1)
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
         }
     }
     override func didReceiveMemoryWarning() {
@@ -48,7 +49,6 @@ class RewardTableViewController: UITableViewController {
         }
         
         setRewards()
-        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,15 +71,18 @@ class RewardTableViewController: UITableViewController {
     }
     
     func setDescription(cell:RewardCell, indexPath:NSIndexPath) {
+        print("description begin")
         let reward = self.Rewards[indexPath.row] as Reward
         let description: String! = reward.Description
         
         if let lbDescription = cell.DescriptionLabel{
             lbDescription.text = description!
         }
+        print("description end")
     }
     
     func setPointsRequiredString(cell:RewardCell, indexPath:NSIndexPath) {
+        print("points begin")
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
@@ -87,9 +90,11 @@ class RewardTableViewController: UITableViewController {
         if let lbPoints = cell.PointsLabel{
             lbPoints.text = "\(points) / \(pointRequiredString) points"
         }
+        print("points end")
     }
     
     func setImage(cell:RewardCell, indexPath:NSIndexPath) {
+        print("image begin")
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         var image: UIImage
@@ -103,9 +108,11 @@ class RewardTableViewController: UITableViewController {
         if let img = cell.imIcon{
             img.image = image
         }
+        print("image end")
     }
     
     func setProgressView(cell:RewardCell, indexPath: NSIndexPath){
+        print("progress begin")
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         var progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
@@ -116,6 +123,7 @@ class RewardTableViewController: UITableViewController {
         if let prgs = cell.pvProgress{
             prgs.setProgress(progress, animated: true)
         }
+        print("progress end")
     }
 }
 

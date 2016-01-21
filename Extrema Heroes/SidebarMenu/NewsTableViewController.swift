@@ -31,8 +31,6 @@ class NewsTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
             setRewards()
-            sleep(1)
-            self.tableView.reloadData()
         }
     }
     
@@ -52,7 +50,9 @@ class NewsTableViewController: UITableViewController {
                 self.Rewards.append(tempReward)
                 }
             }
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
         }
     }
 
