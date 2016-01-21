@@ -81,6 +81,7 @@ class NewsTableViewController: UITableViewController {
             cell.postTitleLabel.text = account.getName()
             cell.authorLabel.text = "\(self.points)/\(self.Rewards[0].PointsRequired) until next reward"
             cell.authorImageView.image = account.getProfilePicture()
+            cell.pvProgress.setProgress((1.0 / Float(self.Rewards[0].PointsRequired)) * Float(self.points), animated: false)
             return cell
         } else {
             self.tableView.rowHeight = 132.0
@@ -123,11 +124,8 @@ class NewsTableViewController: UITableViewController {
     func setProgressView(cell:RewardCell, index: Int){
         let points = self.points
         let reward = self.Rewards[index] as Reward
-        var progress = (100.0 / Float(reward.PointsRequired)) * Float(points)
-        if(progress >= 100.0){
-            progress = 100.0
-        }
-        cell.pvProgress.setProgress(progress, animated: false)
+        var progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
+        cell.pvProgress.setProgress(progress, animated: true)
     }
 
 }
