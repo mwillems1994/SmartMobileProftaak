@@ -21,7 +21,6 @@ class NewsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.points = account.getPoints(1)
         if revealViewController() != nil {
-//            revealViewController().rearViewRevealWidth = 62
             menuButton.target = revealViewController()
             menuButton.action = "revealToggle:"
 

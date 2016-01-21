@@ -113,10 +113,12 @@ class Account
     }
         
     func getName() -> String{
-         
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") != nil){
          let fn = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaFirstname") as! String
          let ln = NSUserDefaults.standardUserDefaults().objectForKey("ExtremaLastname") as! String
         return fn + " " + ln
+        }
+        return ""
     }
     func getEmail() ->String{
         return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaEmail") as! String
