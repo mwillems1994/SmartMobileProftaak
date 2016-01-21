@@ -31,6 +31,7 @@ class NewsTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
             setRewards()
+            sleep(1)
             self.tableView.reloadData()
         }
     }
@@ -105,14 +106,20 @@ class NewsTableViewController: UITableViewController {
     func setDescription(cell:RewardCell, index: Int) {
         let reward = self.Rewards[index] as Reward
         let description: String! = reward.Description
-        cell.DescriptionLabel.text = description!
+        
+        if let lbDescription = cell.DescriptionLabel{
+            lbDescription.text = description!
+        }
     }
     
     func setPointsRequiredString(cell:RewardCell, index: Int) {
         let points = self.points
         let reward = self.Rewards[index] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
-        cell.PointsLabel.text = "\(points) / \(pointRequiredString) points"
+        
+        if let lbPoints = cell.PointsLabel{
+            lbPoints.text = "\(points) / \(pointRequiredString) points"
+        }
     }
     
     func setImage(cell:RewardCell, index: Int) {
@@ -125,13 +132,18 @@ class NewsTableViewController: UITableViewController {
             image = UIImage(named: "\(reward.Code)_locked")!
         }
         
-        cell.imIcon.image = image
+        if let img = cell.imIcon{
+            img.image = image
+        }
     }
     
     func setProgressView(cell:RewardCell, index: Int){
         let points = self.points
         let reward = self.Rewards[index] as Reward
         let progress = (1.0 / Float(reward.PointsRequired)) * Float(points)
-        cell.pvProgress.setProgress(progress, animated: true)
+        
+        if let prgs = cell.pvProgress{
+            prgs.setProgress(progress, animated: true)
+        }
     }
 }

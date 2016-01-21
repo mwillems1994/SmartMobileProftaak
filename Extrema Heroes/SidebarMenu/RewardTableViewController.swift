@@ -28,6 +28,7 @@ class RewardTableViewController: UITableViewController {
                 )
                 self.Rewards.append(tempReward)
             }
+            sleep(1)
             self.tableView.reloadData()
         }
     }
@@ -47,10 +48,7 @@ class RewardTableViewController: UITableViewController {
         }
         
         setRewards()
-        if(self.Rewards.count == 0){
-            sleep(1)
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,27 +73,36 @@ class RewardTableViewController: UITableViewController {
     func setDescription(cell:RewardCell, indexPath:NSIndexPath) {
         let reward = self.Rewards[indexPath.row] as Reward
         let description: String! = reward.Description
-        cell.DescriptionLabel.text = description!
+        
+        if let lbDescription = cell.DescriptionLabel{
+            lbDescription.text = description!
+        }
     }
     
     func setPointsRequiredString(cell:RewardCell, indexPath:NSIndexPath) {
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         let pointRequiredString: String! = String(reward.PointsRequired)
-        cell.PointsLabel.text = "\(points) / \(pointRequiredString) points"
+        
+        if let lbPoints = cell.PointsLabel{
+            lbPoints.text = "\(points) / \(pointRequiredString) points"
+        }
     }
     
     func setImage(cell:RewardCell, indexPath:NSIndexPath) {
         let points = self.points
         let reward = self.Rewards[indexPath.row] as Reward
         var image: UIImage
+        
         if(points >= reward.PointsRequired){
             image = UIImage(named: "\(reward.Code)_unlocked")!
         } else {
             image = UIImage(named: "\(reward.Code)_locked")!
         }
         
-        cell.imIcon.image = image
+        if let img = cell.imIcon{
+            img.image = image
+        }
     }
     
     func setProgressView(cell:RewardCell, indexPath: NSIndexPath){
@@ -105,7 +112,10 @@ class RewardTableViewController: UITableViewController {
         if (progress > 1.0){
             progress = 1.0
         }
-        cell.pvProgress.setProgress(progress, animated: true)
+        
+        if let prgs = cell.pvProgress{
+            prgs.setProgress(progress, animated: true)
+        }
     }
 }
 

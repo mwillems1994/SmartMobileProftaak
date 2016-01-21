@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }else{
-            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
+            //NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
         }
     
         
