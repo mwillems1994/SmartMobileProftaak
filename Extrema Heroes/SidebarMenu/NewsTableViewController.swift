@@ -75,6 +75,8 @@ class NewsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+
         // Configure the cell...
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
@@ -84,14 +86,14 @@ class NewsTableViewController: UITableViewController {
             cell.authorImageView.image = account.getProfilePicture()
             return cell
 
-        } else {
-            let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
-            setImage(cell2, indexPath: indexPath)
-            setDescription(cell2, indexPath: indexPath)
-            setPointsRequiredString(cell2, indexPath: indexPath)
-            setProgressView(cell2, indexPath: indexPath)
-            return cell2
         }
+        
+        let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! RewardCell
+        setImage(cell2, indexPath: indexPath)
+        setDescription(cell2, indexPath: indexPath)
+        setPointsRequiredString(cell2, indexPath: indexPath)
+        setProgressView(cell2, indexPath: indexPath)
+        return cell2
     }
     func setDescription(cell:RewardCell, indexPath:NSIndexPath) {
         let reward = self.Rewards[indexPath.row] as Reward
