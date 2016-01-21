@@ -74,8 +74,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFie
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = [ "public_profile", "email", "user_friends"]
         let X_Pos:CGFloat? = (self.view.frame.width * 0.5) - (loginButton.frame.width / 2)
-        let Y_Pos:CGFloat? = (self.view.frame.height * 0.546) + loginButton.frame.height
-        
+        let Y_Pos:CGFloat? = 350
         loginButton.frame = CGRectMake(X_Pos!, Y_Pos!, loginButton.frame.width, loginButton.frame.height)
         loginButton.delegate = self
         
