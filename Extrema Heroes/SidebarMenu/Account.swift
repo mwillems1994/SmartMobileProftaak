@@ -146,6 +146,7 @@ class Account
         let base64String = img.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         return base64String
     }
+    
     private func DecodeImage() -> UIImage{
         if(NSUserDefaults.standardUserDefaults().objectForKey("ExtremaImageURL") == nil){
             return UIImage(named: "main_photo_profile")!

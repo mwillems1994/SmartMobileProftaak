@@ -76,6 +76,11 @@ class DatabaseManager:NSObject {
         executePost("insertAccount", value: jsonAccount)
     }
     
+    func insertInvite(AccountMasterID: Int, AccountInvitedID: Int){
+        let jsonValues = "%7B%22AccountMasterID%22:\(AccountMasterID),%22AccountInvitedID%22:\(AccountInvitedID)%7D"
+        executePost("insertInvite", value: jsonValues)
+    }
+    
     private func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
         let url = NSURL(string: path)!
         let request = NSMutableURLRequest(URL:url)

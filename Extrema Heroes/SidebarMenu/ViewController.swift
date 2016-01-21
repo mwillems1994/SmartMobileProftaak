@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController, BarcodeDelegate {
+    
 @IBOutlet weak var tbCode: UITextField!
+    let account = Account()
     @IBAction func btnSubmit(sender: UIButton) {
         let barcode = self.DecodeString(tbCode.text!)
-        print(barcode)
+        let splittedBarcode = barcode.characters.split{$0 == "_"}.map(String.init)
+        let accountMasterID = Int(splittedBarcode[1])
+        DatabaseManager.sharedInstance.insertInvite(accountMasterID!, AccountInvitedID: 7)
     }
     
     override func viewDidLoad() {
@@ -56,8 +60,8 @@ class ViewController: UIViewController, BarcodeDelegate {
         return base64String
     }
     private func DecodeString(encodedString: String) -> String{
-        let decodedData = NSData(base64EncodedString: encodedString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-        let decodedString =  NSString(data: decodedData!, encoding: NSUTF8StringEncoding)
+        let decodedData = NSData(base64EncodedString: encodedString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+        let decodedString = NSString(data: decodedData, encoding: NSUTF8StringEncoding)!
         return String(decodedString)
     }
     
