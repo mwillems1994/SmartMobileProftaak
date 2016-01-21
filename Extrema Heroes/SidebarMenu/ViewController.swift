@@ -8,11 +8,8 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, BarcodeDelegate {
-    
-    
-    
+@IBOutlet weak var tbCode: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +33,8 @@ class ViewController: UIViewController, BarcodeDelegate {
     }
     
     func barcodeReaded(barcode: String) {
-        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)    }
+        self.tbCode.text! = barcode
+    }
     
 }
 
