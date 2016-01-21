@@ -27,14 +27,14 @@ class ViewController: UIViewController, BarcodeDelegate {
     func textFieldShouldReturn(textField: UITextField) ->Bool {
         
         textField.resignFirstResponder()
+        textField.text = "hoi"
         
         return true;
         
     }
     
     func barcodeReaded(barcode: String) {
-        self.tbCode.text! = barcode
-        //commit text
+        self.tbCode.text? = "code: \(barcode)"
     }
     
 }
