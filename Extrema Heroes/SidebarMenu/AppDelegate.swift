@@ -20,15 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let account = Account()
-        if(account.getId() == 0){
+        //if(account.getId() == 0){
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("FirstLogin")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-        }else{
-            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
-        }
+        //}
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
+    
     
         
         let pageControl = UIPageControl.appearance()
