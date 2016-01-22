@@ -19,7 +19,6 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkTempInvite()
         self.points = account.getPoints(1)
         if revealViewController() != nil {
             menuButton.target = revealViewController()
@@ -32,17 +31,6 @@ class NewsTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
             setRewards()
-        }
-    }
-    
-    func checkTempInvite() {
-        let tempInvite = account.getTempInvite()
-        let tempID = account.getId()
-        if(tempInvite != 0){
-            if(tempInvite != tempID){
-                DatabaseManager.sharedInstance.insertInvite(tempInvite, AccountInvitedID: tempID)
-            }
-            account.removeTempInvite()
         }
     }
     

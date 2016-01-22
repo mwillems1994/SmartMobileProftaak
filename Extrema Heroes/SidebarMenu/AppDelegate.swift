@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaLastname")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaEmail")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaImageURL")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaPoints")
     
     
         

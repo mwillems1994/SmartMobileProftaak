@@ -60,6 +60,7 @@ class Account
                                     let id = Int(accountJson["ID"].string!)!
                                     NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
                                     DatabaseManager.sharedInstance.insertInvite(id, AccountInvitedID: id)
+                                    self.checkTempInvite()
                                 }
                                 NSUserDefaults.standardUserDefaults().synchronize()
                             }
@@ -84,6 +85,17 @@ class Account
     
     init(){
         
+    }
+    
+    private func checkTempInvite() {
+        let tempInvite = self.getTempInvite()
+        let tempID = self.getId()
+        if(tempInvite != 0){
+            if(tempInvite != tempID){
+                DatabaseManager.sharedInstance.insertInvite(tempInvite, AccountInvitedID: tempID)
+            }
+            self.removeTempInvite()
+        }
     }
     
     func getPointsFromDB(EventID: Int, AccountID: Int) -> Int{

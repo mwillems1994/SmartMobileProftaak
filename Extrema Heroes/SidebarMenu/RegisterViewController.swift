@@ -39,12 +39,26 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             password: self.tbPassword.text!,
                             eventId: 1
                         )
+                        DatabaseManager.sharedInstance.insertInvite(Int(accountJson["ID"].string!)!, AccountInvitedID: Int(accountJson["ID"].string!)!)
+                        self.checkTempInvite()
                     }
                     NSUserDefaults.standardUserDefaults().synchronize()
                 }
                 sleep(1)
                 self.performSegueWithIdentifier("loginSuccess", sender:self)
             }
+        }
+    }
+    
+    func checkTempInvite() {
+        let account = Account()
+        let tempInvite = account.getTempInvite()
+        let tempID = account.getId()
+        if(tempInvite != 0){
+            if(tempInvite != tempID){
+                DatabaseManager.sharedInstance.insertInvite(tempInvite, AccountInvitedID: tempID)
+            }
+            account.removeTempInvite()
         }
     }
     

@@ -99,13 +99,12 @@ class RewardTableViewController: UITableViewController {
         let reward = self.Rewards[indexPath.row] as Reward
         var image: UIImage
         
-        if(points >= reward.PointsRequired){
-            image = UIImage(named: "\(reward.Code)_unlocked")!
-        } else {
-            image = UIImage(named: "\(reward.Code)_locked")!
-        }
-        
         if let img = cell.imIcon{
+            if(points >= reward.PointsRequired){
+                image = UIImage(named: "\(reward.Code)_unlocked")!
+            } else {
+                image = UIImage(named: "\(reward.Code)_locked")!
+            }
             img.image = image
         }
         print("image end")
@@ -120,7 +119,7 @@ class RewardTableViewController: UITableViewController {
             progress = 1.0
         }
         
-        if let prgs = cell.pvProgress{
+        if let prgs = cell.pvProgress{00
             prgs.setProgress(progress, animated: true)
         }
         print("progress end")
