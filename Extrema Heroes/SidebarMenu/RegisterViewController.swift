@@ -45,7 +45,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     NSUserDefaults.standardUserDefaults().synchronize()
                 }
                 sleep(1)
-                self.performSegueWithIdentifier("loginSuccess", sender:self)
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    self.performSegueWithIdentifier("registerSuccess", sender:self)
+                }
             }
         }
     }
