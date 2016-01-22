@@ -44,6 +44,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFie
                         password: self.tbPassword.text!,
                         eventId: 1
                     )
+                    DatabaseManager.sharedInstance.insertInvite(Int(accountJson["ID"].string!)!, AccountInvitedID: Int(accountJson["ID"].string!)!)
                 }
             }
             sleep(1)

@@ -59,6 +59,7 @@ class Account
                                     let accountJson:JSON = JSON(subJson.object)
                                     let id = Int(accountJson["ID"].string!)!
                                     NSUserDefaults.standardUserDefaults().setObject(id, forKey: "ExtremaId")
+                                    DatabaseManager.sharedInstance.insertInvite(id, AccountInvitedID: id)
                                 }
                                 NSUserDefaults.standardUserDefaults().synchronize()
                             }
@@ -68,6 +69,7 @@ class Account
         }
         NSUserDefaults.standardUserDefaults().setObject(facebookId, forKey: "ExtremaFbId")
         NSUserDefaults.standardUserDefaults().synchronize()
+        
     }
     
     init(id:Int, fbId: String, email: String, firstname: String, lastname: String, imageURL: String, password: String, eventId: Int){
@@ -102,6 +104,22 @@ class Account
             return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaId") as! Int
         }
         return 0
+    }
+    
+    func setTempInvite(accountMasterID: Int){
+        NSUserDefaults.standardUserDefaults().setObject(accountMasterID, forKey: "ExtremaTempInviteAccountMasterID")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func getTempInvite() -> Int {
+        if (NSUserDefaults.standardUserDefaults().objectForKey("ExtremaTempInviteAccountMasterID") != nil){
+            return NSUserDefaults.standardUserDefaults().objectForKey("ExtremaTempInviteAccountMasterID") as! Int
+        }
+        return 0
+    }
+    
+    func removeTempInvite(){
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaTempInviteAccountMasterID")
     }
     
     func getPoints(EventId:Int) -> Int{

@@ -16,7 +16,7 @@ class ViewController: UIViewController, BarcodeDelegate {
         let barcode = self.DecodeString(tbCode.text!)
         let splittedBarcode = barcode.characters.split{$0 == "_"}.map(String.init)
         let accountMasterID = Int(splittedBarcode[1])
-        DatabaseManager.sharedInstance.insertInvite(accountMasterID!, AccountInvitedID: 7)
+        account.setTempInvite(accountMasterID!)
     }
     
     override func viewDidLoad() {
