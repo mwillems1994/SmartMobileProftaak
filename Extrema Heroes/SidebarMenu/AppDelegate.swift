@@ -15,6 +15,7 @@ import FBSDKLoginKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    let debugmode = true
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -27,14 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFbId")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFirstname")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaLastname")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaEmail")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaImageURL")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaPoints")
-    
+        if debugmode{
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaId")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFbId")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaFirstname")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaLastname")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaEmail")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaImageURL")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("ExtremaPoints")
+        }
     
         
         let pageControl = UIPageControl.appearance()
